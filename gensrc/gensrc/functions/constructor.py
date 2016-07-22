@@ -56,7 +56,8 @@ class Constructor(function.Function):
             'namespaceObjects' : environment.config().namespaceObjects(),
             'overwriteVariable' : addin.overwriteVariable(),
             'repositoryClass' : addin.repositoryClass(),
-            'voParameters' : self.parameterList_.generate(addin.voCall()) }
+            'voParameters' : self.parameterList_.generate(addin.voCall()),
+            'baseClass' : self.baseClass() }
 
     def libraryFunction(self):
         """Return the name of the function in the underlying application

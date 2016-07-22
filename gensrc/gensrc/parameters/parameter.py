@@ -41,6 +41,7 @@ class Value(serializable.Serializable):
     ignore_ = False
     default_ = ''
     errorValue_ = ''
+    nameSpace_= 'DefSpace'
 
     #############################################
     # public interface
@@ -49,6 +50,10 @@ class Value(serializable.Serializable):
     def tensorRank(self):
         """Return the tensor rank of this value i.e. scalar/vector/matrix."""
         return self.tensorRank_
+
+    def nameSpace(self):
+        """Return the namespace."""
+        return self.nameSpace_
 
     def loop(self):
         """Return boolean indicating whether this value is a loop parameter."""
@@ -155,6 +160,7 @@ class Parameter(Value):
         serializer.serializeProperty(self, common.SUPER_TYPE)
         serializer.serializeProperty(self, common.TENSOR_RANK)
         serializer.serializeProperty(self, common.DESCRIPTION)
+        serializer.serializeProperty(self, common.NAMESPACE)
         serializer.serializeAttributeBoolean(self, common.IGNORE)
         serializer.serializeAttributeBoolean(self, common.CONST, True)
         serializer.serializeAttribute(self, common.DEFAULT)
@@ -185,6 +191,7 @@ class ReturnValue(Value):
         serializer.serializeProperty(self, common.TYPE)
         serializer.serializeProperty(self, common.SUPER_TYPE)
         serializer.serializeProperty(self, common.TENSOR_RANK)
+        serializer.serializeProperty(self, common.NAMESPACE)
 
     def postSerialize(self):
         """Perform post serialization initialization."""
@@ -238,12 +245,13 @@ class MemberObjectId(Parameter):
     tensorRank_ = common.SCALAR
     ignore_ = False
 
-    def __init__(self, typeName, superTypeName):
+    def __init__(self, typeName, superTypeName, nameSpaceID):
         """Initialize the MemberObjectId object."""
         #self.failIfEmpty = True # Member function can't be invoked on null object
 
         self.fullType_ = environment.getType(typeName, superTypeName)
         self.description_ = 'id of existing %s object' % self.fullType_.value()
+        self.nameSpace_= nameSpaceID
 
 class EnumerationId(Parameter):
     """ID of an enumeration.

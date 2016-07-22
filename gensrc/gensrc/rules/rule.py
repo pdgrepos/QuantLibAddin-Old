@@ -52,6 +52,7 @@ class Rule(serializable.Serializable):
     superType_ = None
     nativeType_ = None
     type_ = None
+    nameSpace_= None
     default_ = None
     error_ = None
     loop_ = None
@@ -203,7 +204,8 @@ class RuleGroup(serializable.Serializable):
             common.OBJECT_REFERENCE : self.param_.fullType().objectReference(),
             common.SUPER_TYPE : self.param_.fullType().superType(),
             common.TENSOR_RANK : self.param_.tensorRank(),
-            common.TYPE : self.param_.fullType().value() }
+            common.TYPE : self.param_.fullType().value(),
+            common.NAMESPACE : self.param_.nameSpace() }
 
     def checkSkipFirst(self):
         return self.checkSkipFirst_
