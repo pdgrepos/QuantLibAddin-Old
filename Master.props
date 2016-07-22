@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets">
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros">
+    <BOOST_INCLUDES>$(BOOST_ROOT)</BOOST_INCLUDES>
+    <BOOST_LIBS32>$(BOOST_ROOT)\stage\lib</BOOST_LIBS32>
+    <BOOST_LIBS64>$(BOOST_ROOT)\stage\win64\lib</BOOST_LIBS64>
+  </PropertyGroup>
+  <PropertyGroup>
+    <_ProjectFileVersion>11.0.61030.0</_ProjectFileVersion>
+  </PropertyGroup>
+  <ItemDefinitionGroup />
+  <ItemGroup>
+    <BuildMacro Include="BOOST_INCLUDES">
+      <Value>$(BOOST_INCLUDES)</Value>
+    </BuildMacro>
+    <BuildMacro Include="BOOST_LIBS32">
+      <Value>$(BOOST_LIBS32)</Value>
+    </BuildMacro>
+    <BuildMacro Include="BOOST_LIBS64">
+      <Value>$(BOOST_LIBS64)</Value>
+    </BuildMacro>
+  </ItemGroup>
+</Project>
