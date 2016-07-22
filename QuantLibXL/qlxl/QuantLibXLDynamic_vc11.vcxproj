@@ -327,6 +327,7 @@
     <ClCompile Include="functions\browniangenerators.cpp" />
     <ClCompile Include="functions\btp.cpp" />
     <ClCompile Include="functions\calendar.cpp" />
+    <ClCompile Include="functions\calibrationhelpers.cpp" />
     <ClCompile Include="functions\capfloor.cpp" />
     <ClCompile Include="functions\capletvolstructure.cpp" />
     <ClCompile Include="functions\cmsmarket.cpp" />
@@ -367,6 +368,7 @@
     <ClCompile Include="functions\randomsequencegenerator.cpp" />
     <ClCompile Include="functions\rangeaccrual.cpp" />
     <ClCompile Include="functions\ratehelpers.cpp" />
+    <ClCompile Include="register\register_calibrationhelpers.cpp" />
     <ClCompile Include="register\register_overnightindexedswap.cpp" />
     <ClCompile Include="functions\schedule.cpp" />
     <ClCompile Include="functions\sequencestatistics.cpp" />
