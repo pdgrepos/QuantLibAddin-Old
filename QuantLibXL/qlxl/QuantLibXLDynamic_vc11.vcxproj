@@ -92,10 +92,10 @@
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.xll</TargetExt>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.xll</TargetExt>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.xll</TargetExt>
-    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">QuantLibXLDynamic-vc110-mt-gd-1_8_0</TargetName>
-    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">QuantLibXLDynamic-vc110-x64-mt-gd-1_8_0</TargetName>
-    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">QuantLibXLDynamic-vc110-mt-1_8_0</TargetName>
-    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">QuantLibXLDynamic-vc110-x64-mt-1_8_0</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">QuantLibXLDynamic-vc110-mt-gd-1_9_0</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">QuantLibXLDynamic-vc110-x64-mt-gd-1_9_0</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">QuantLibXLDynamic-vc110-mt-1_9_0</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">QuantLibXLDynamic-vc110-x64-mt-1_9_0</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <PreBuildEvent>
@@ -143,7 +143,7 @@
       <RandomizedBaseAddress>false</RandomizedBaseAddress>
       <DataExecutionPrevention>
       </DataExecutionPrevention>
-      <ImportLibrary>.\buildDynamic\vc110\$(Platform)\$(Configuration)/QuantLibXLDynamic-vc110-mt-gd-1_8_0.lib</ImportLibrary>
+      <ImportLibrary>.\buildDynamic\vc110\$(Platform)\$(Configuration)/QuantLibXLDynamic-vc110-mt-gd-1_9_0.lib</ImportLibrary>
       <TargetMachine>MachineX86</TargetMachine>
       <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
     </Link>
@@ -197,7 +197,7 @@
       <RandomizedBaseAddress>false</RandomizedBaseAddress>
       <DataExecutionPrevention>
       </DataExecutionPrevention>
-      <ImportLibrary>.\buildDynamic\vc110\$(Platform)\$(Configuration)/QuantLibXLDynamic-vc110-mt-gd-1_8_0.lib</ImportLibrary>
+      <ImportLibrary>.\buildDynamic\vc110\$(Platform)\$(Configuration)/QuantLibXLDynamic-vc110-mt-gd-1_9_0.lib</ImportLibrary>
       <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
     </Link>
     <Bscmake>
@@ -252,7 +252,7 @@
       <RandomizedBaseAddress>false</RandomizedBaseAddress>
       <DataExecutionPrevention>
       </DataExecutionPrevention>
-      <ImportLibrary>.\buildDynamic\vc110\$(Platform)\$(Configuration)/QuantLibXLDynamic-vc110-mt-1_8_0.lib</ImportLibrary>
+      <ImportLibrary>.\buildDynamic\vc110\$(Platform)\$(Configuration)/QuantLibXLDynamic-vc110-mt-1_9_0.lib</ImportLibrary>
       <TargetMachine>MachineX86</TargetMachine>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <OptimizeReferences>true</OptimizeReferences>
@@ -309,7 +309,7 @@
       <RandomizedBaseAddress>false</RandomizedBaseAddress>
       <DataExecutionPrevention>
       </DataExecutionPrevention>
-      <ImportLibrary>.\buildDynamic\vc110\$(Platform)\$(Configuration)/QuantLibXLDynamic-vc110-mt-1_8_0.lib</ImportLibrary>
+      <ImportLibrary>.\buildDynamic\vc110\$(Platform)\$(Configuration)/QuantLibXLDynamic-vc110-mt-1_9_0.lib</ImportLibrary>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <OptimizeReferences>true</OptimizeReferences>
       <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
@@ -323,6 +323,7 @@
     <ClCompile Include="functions\abcd.cpp" />
     <ClCompile Include="functions\accountingengines.cpp" />
     <ClCompile Include="functions\alphaform.cpp" />
+    <ClCompile Include="functions\arithmeticaverageois.cpp" />
     <ClCompile Include="functions\assetswap.cpp" />
     <ClCompile Include="functions\basketlossmodels.cpp" />
     <ClCompile Include="functions\bonds.cpp" />
@@ -370,6 +371,7 @@
     <ClCompile Include="functions\randomsequencegenerator.cpp" />
     <ClCompile Include="functions\rangeaccrual.cpp" />
     <ClCompile Include="functions\ratehelpers.cpp" />
+    <ClCompile Include="register\register_arithmeticaverageois.cpp" />
     <ClCompile Include="register\register_calibrationhelpers.cpp" />
     <ClCompile Include="register\register_overnightindexedswap.cpp" />
     <ClCompile Include="functions\schedule.cpp" />

@@ -152,14 +152,14 @@
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug (static runtime)|x64'">.\build\vc110\$(Platform)\$(Configuration)\</IntDir>
     <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\lib\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\build\vc110\$(Platform)\$(Configuration)\</IntDir>
-    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">QuantLibObjects-vc110-mt-1_8_0</TargetName>
-    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">QuantLibObjects-vc110-x64-mt-1_8_0</TargetName>
-    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">QuantLibObjects-vc110-mt-gd-1_8_0</TargetName>
-    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">QuantLibObjects-vc110-x64-mt-gd-1_8_0</TargetName>
-    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug (static runtime)|Win32'">QuantLibObjects-vc110-mt-sgd-1_8_0</TargetName>
-    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug (static runtime)|x64'">QuantLibObjects-vc110-x64-mt-sgd-1_8_0</TargetName>
-    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release (static runtime)|Win32'">QuantLibObjects-vc110-mt-s-1_8_0</TargetName>
-    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release (static runtime)|x64'">QuantLibObjects-vc110-x64-mt-s-1_8_0</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">QuantLibObjects-vc110-mt-1_9_0</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">QuantLibObjects-vc110-x64-mt-1_9_0</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">QuantLibObjects-vc110-mt-gd-1_9_0</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">QuantLibObjects-vc110-x64-mt-gd-1_9_0</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug (static runtime)|Win32'">QuantLibObjects-vc110-mt-sgd-1_9_0</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug (static runtime)|x64'">QuantLibObjects-vc110-x64-mt-sgd-1_9_0</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release (static runtime)|Win32'">QuantLibObjects-vc110-mt-s-1_9_0</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release (static runtime)|x64'">QuantLibObjects-vc110-x64-mt-s-1_9_0</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -430,6 +430,7 @@
     </Bscmake>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="qlo\arithmeticaverageois.cpp" />
     <ClCompile Include="qlo\calibrationhelpers.cpp" />
     <ClCompile Include="qlo\enumerations\register\register_all.cpp" />
     <ClCompile Include="qlo\enumerations\register\register_classes.cpp" />
@@ -438,11 +439,14 @@
     <ClCompile Include="qlo\enumerations\constructors\enumeratedclasses.cpp" />
     <ClCompile Include="qlo\enumerations\constructors\enumeratedpairs.cpp" />
     <ClCompile Include="qlo\enumerations\factories\calendarfactory.cpp" />
+    <ClCompile Include="qlo\serialization\create\create_arithmeticaverageois.cpp" />
     <ClCompile Include="qlo\serialization\create\create_calibrationhelpers.cpp" />
+    <ClCompile Include="qlo\serialization\register\serialization_arithmeticaverageois.cpp" />
     <ClCompile Include="qlo\serialization\register\serialization_calibrationhelpers.cpp" />
     <ClCompile Include="qlo\valueobjects\vo_abcd.cpp" />
     <ClCompile Include="qlo\valueobjects\vo_accountingengines.cpp" />
     <ClCompile Include="qlo\valueobjects\vo_alphaform.cpp" />
+    <ClCompile Include="qlo\valueobjects\vo_arithmeticaverageois.cpp" />
     <ClCompile Include="qlo\valueobjects\vo_assetswap.cpp" />
     <ClCompile Include="qlo\valueobjects\vo_basketlossmodels.cpp" />
     <ClCompile Include="qlo\valueobjects\vo_bonds.cpp" />
@@ -696,6 +700,7 @@
     <ClCompile Include="qlo\utilities.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="qlo\arithmeticaverageois.hpp" />
     <ClInclude Include="qlo\calibrationhelpers.hpp" />
     <ClInclude Include="qlo\enumerations\register\register_all.hpp" />
     <ClInclude Include="qlo\enumerations\constructors\enumeratedclasses.hpp" />
@@ -709,12 +714,15 @@
     <ClInclude Include="qlo\enumerations\factories\pricingenginesfactory.hpp" />
     <ClInclude Include="qlo\enumerations\factories\termstructuresfactory.hpp" />
     <ClInclude Include="qlo\models.hpp" />
+    <ClInclude Include="qlo\serialization\create\create_arithmeticaverageois.hpp" />
     <ClInclude Include="qlo\serialization\create\create_calibrationhelpers.hpp" />
+    <ClInclude Include="qlo\serialization\register\serialization_arithmeticaverageois.hpp" />
     <ClInclude Include="qlo\serialization\register\serialization_calibrationhelpers.hpp" />
     <ClInclude Include="qlo\valueobjects\vo_abcd.hpp" />
     <ClInclude Include="qlo\valueobjects\vo_accountingengines.hpp" />
     <ClInclude Include="qlo\valueobjects\vo_all.hpp" />
     <ClInclude Include="qlo\valueobjects\vo_alphaform.hpp" />
+    <ClInclude Include="qlo\valueobjects\vo_arithmeticaverageois.hpp" />
     <ClInclude Include="qlo\valueobjects\vo_assetswap.hpp" />
     <ClInclude Include="qlo\valueobjects\vo_basketlossmodels.hpp" />
     <ClInclude Include="qlo\valueobjects\vo_bonds.hpp" />

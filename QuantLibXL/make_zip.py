@@ -9,8 +9,8 @@ import argparse
 import re
 
 QLXL = "QuantLibXL"
-VERSION = "1.8.0"
-VERSION_ = "1_8_0"
+VERSION = "1.9.0"
+VERSION_ = "1_9_0"
 VC_VERSION = "vc120"
 QLXL_VERSION = QLXL + "-" + VERSION
 ROOT_DIR = QLXL_VERSION + "\\"
@@ -189,9 +189,8 @@ def zipBinaryFiles(zipFile):
 
 def zipFrameworkFiles(zipFile):
     zipFile.zip("../XL-Launcher/bin/Addin/Launcher.xla", zipFile.root + "Launcher.xla")
-    zipFile.zip("../XL-Launcher/bin/Addin/session_file.public.live.xml", zipFile.root + "session_file.xml")
-    zipFile.zip("../XL-Launcher/bin/Addin/session_file.public.live.bat", zipFile.root + "session_file.public.live.bat")
-    zipFile.zip("../XL-Launcher/bin/Addin/session_file.public.live.xml", zipFile.root + "session_file.public.live.xml")
+    zipFile.zip("../XL-Launcher/bin/Addin/session_file.EMPTY-s.xml", zipFile.root + "session_file.EMPTY-s.xml")
+    zipFile.zip("../XL-Launcher/bin/Addin/session_file.EMPTY-s.bat", zipFile.root + "session_file.EMPTY-s.bat")
     Selector(
         inputPath = 'Data2',
         zipFile = zipFile,
