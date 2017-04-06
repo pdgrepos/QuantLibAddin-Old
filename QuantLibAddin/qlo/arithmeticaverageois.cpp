@@ -22,8 +22,8 @@
 #endif
 
 #include <qlo/arithmeticaverageois.hpp>
-#include <ql/instruments/makearithmeticaverageois.hpp>
-#include <ql/termstructures/yield/arithmeticoisratehelper.hpp>
+#include <ql/experimental/averageois/makearithmeticaverageois.hpp>
+#include <ql/experimental/averageois/arithmeticoisratehelper.hpp>
 #include <ql/time/ecb.hpp>
 
 using std::vector;

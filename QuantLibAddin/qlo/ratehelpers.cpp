@@ -34,7 +34,7 @@
 #include <ql/termstructures/yield/ratehelpers.hpp>
 #include <ql/termstructures/yield/bondhelpers.hpp>
 #include <ql/termstructures/yield/oisratehelper.hpp>
-#include <ql/termstructures/yield/arithmeticoisratehelper.hpp>
+#include <ql/experimental/averageois/arithmeticoisratehelper.hpp>
 
 #include <oh/repository.hpp>
 

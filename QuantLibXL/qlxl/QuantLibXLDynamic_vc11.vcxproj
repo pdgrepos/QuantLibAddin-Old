@@ -63,7 +63,7 @@
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
-  <Import Project="$(SolutionDir)\$(SolutionName).props" />
+  <Import Project="$(SolutionDir)\$(SolutionName).props" Condition="Exists('$(SolutionDir)\$(SolutionName).props')" />
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
     <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
@@ -329,7 +329,6 @@
     <ClCompile Include="functions\browniangenerators.cpp" />
     <ClCompile Include="functions\btp.cpp" />
     <ClCompile Include="functions\calendar.cpp" />
-    <ClCompile Include="functions\calibrationhelpers.cpp" />
     <ClCompile Include="functions\capfloor.cpp" />
     <ClCompile Include="functions\capletvolstructure.cpp" />
     <ClCompile Include="functions\cmsmarket.cpp" />
@@ -371,7 +370,6 @@
     <ClCompile Include="functions\rangeaccrual.cpp" />
     <ClCompile Include="functions\ratehelpers.cpp" />
     <ClCompile Include="register\register_arithmeticaverageois.cpp" />
-    <ClCompile Include="register\register_calibrationhelpers.cpp" />
     <ClCompile Include="register\register_overnightindexedswap.cpp" />
     <ClCompile Include="functions\schedule.cpp" />
     <ClCompile Include="functions\sequencestatistics.cpp" />
@@ -458,6 +456,8 @@
     <ClCompile Include="conversions\scalartooper.cpp" />
     <ClCompile Include="..\..\QuantLibAddin\qlo\serialization\serializationfactory.cpp" />
     <ClCompile Include="session.cpp" />
+    <ClCompile Include="functions\calibrationhelpers.cpp" />
+    <ClCompile Include="register\register_calibrationhelpers.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="functions\functioncount.hpp" />

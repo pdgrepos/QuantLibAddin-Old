@@ -19,9 +19,10 @@
 #include <ql/instruments/capfloor.hpp>
 #include <ql/instruments/forward.hpp>
 #include <ql/instruments/overnightindexedswap.hpp>
-#include <ql/instruments/arithmeticaverageois.hpp>
+#include <ql/experimental/averageois/arithmeticaverageois.hpp>
 #include <ql/instruments/swaption.hpp>
 #include <ql/math/interpolations/cubicinterpolation.hpp>
+#include <ql/math/interpolations/mixedinterpolation.hpp>
 #include <ql/math/matrixutilities/pseudosqrt.hpp>
 #include <ql/math/optimization/endcriteria.hpp>
 #include <ql/termstructures/volatility/swaption/cmsmarketcalibration.hpp>
@@ -36,12 +37,12 @@
 namespace QuantLibAddin {
 
     void registerEnumeratedTypes() {
-    
+
 %(codeRegister)s    }
 
     void unregisterEnumeratedTypes() {
-    
-%(codeUnregister)s    
+
+%(codeUnregister)s
     }
 
 }

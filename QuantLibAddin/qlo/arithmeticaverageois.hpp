@@ -21,7 +21,7 @@
 #define qla_arithmeticaverageois_hpp
 
 #include <qlo/swap.hpp>
-#include <ql/instruments/arithmeticaverageois.hpp>
+#include <ql/experimental/averageois/arithmeticaverageois.hpp>
 
 namespace QuantLib {
     class ArithmeticOISRateHelper;
