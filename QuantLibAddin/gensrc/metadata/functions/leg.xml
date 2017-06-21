@@ -544,7 +544,7 @@
 
     <Procedure name='qlLegAccruedPeriod'>
       <description>Returns the accrued period for the current coupon of the given Leg.</description>
-      <alias>QuantLib::CashFlows::accrualPeriod</alias>
+      <alias>QuantLib::CashFlows::accruedPeriod</alias>
       <SupportedPlatforms>
         <SupportedPlatform name='Excel'/>
         <!--SupportedPlatform name='Cpp'/-->
@@ -577,7 +577,7 @@
 
     <Procedure name='qlLegAccruedDays'>
       <description>Returns the accrued days for the current coupon of the given Leg.</description>
-      <alias>QuantLib::CashFlows::accrualDays</alias>
+      <alias>QuantLib::CashFlows::accruedDays</alias>
       <SupportedPlatforms>
         <SupportedPlatform name='Excel'/>
         <!--SupportedPlatform name='Cpp'/-->

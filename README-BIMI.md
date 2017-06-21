@@ -31,7 +31,9 @@ To update the repositories, you have to:
           1. `git commit -m "Merge xxxx/yyy@zzzz into bimi."` where xxxx is the github upstream username, yyyy the
              upstream git repository name and zzzz the first 10 hex digits of the sha of the upstream last commit
              (e.g. lballabio/QuantLib@ff23624108)
-     2. push back all your changes
+     2. optionally add a release (annotated) tag
+          1. `git tag -a bimi-rel-yyyymmdd -m "..."`
+     3. push back all your changes
           1. `git push origin master`
           2. `git push origin bimi`
 
