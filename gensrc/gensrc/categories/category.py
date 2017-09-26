@@ -36,6 +36,11 @@ class Category(serializable.Serializable):
 #include <%(libRootDirectory)s/%(categoryName)s.hpp>
 #include <%(libRootDirectory)s/valueobjects/vo_%(categoryName)s.hpp>\n'''
 
+    VO_CPP_INCLUDES = '''
+#include <%(libRootDirectory)s/%(categoryName)s.hpp>'''
+
+    voCppIncludes_ = None
+
     #############################################
     # public interface
     #############################################
@@ -90,6 +95,9 @@ class Category(serializable.Serializable):
     def serializationIncludes(self):
         return self.serializationIncludeList_
 
+    def voCppIncludes(self):
+        return self.voCppIncludesList_
+
     #############################################
     # serializer interface
     #############################################
@@ -103,6 +111,7 @@ class Category(serializable.Serializable):
         serializer.serializeObjectDict(self, function.Function)
         serializer.serializeList(self, common.ADDIN_INCLUDES, common.INCLUDE, True)
         serializer.serializeList(self, common.SERIALIZATION_INCLUDES, common.INCLUDE, True)
+        serializer.serializeList(self, common.VO_CPP_INCLUDES, common.INCLUDE, True)
         serializer.serializeProperty(self, common.COPYRIGHT)
 
     def postSerialize(self):
@@ -163,4 +172,14 @@ class Category(serializable.Serializable):
         else:
             for includeFile in self.serializationIncludes_:
                 self.serializationIncludeList_ += '#include <%s>\n' % includeFile
+
+        self.voCppIncludesList_ = self.enumIncludes(enumerationList, False)
+            
+        if self.voCppIncludes_ == None:
+            self.voCppIncludesList_ += Category.VO_CPP_INCLUDES % {
+                'categoryName' : self.name_,
+                'libRootDirectory' : environment.config().libRootDirectory() }
+        else:
+            for includeFile in self.voCppIncludes_:
+                self.voCppIncludesList_ += '#include <%s>\n' % includeFile
 

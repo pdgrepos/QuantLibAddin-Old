@@ -167,6 +167,7 @@ class ValueObjects(addin.Addin):
             'categoryName' : cat.name(),
             'functions' : bufFunc,
             'libRoot' : environment.config().libRootDirectory(),
+			'voCcpIncludes' : cat.voCppIncludes(),
             'namespaceObjects' : environment.config().namespaceObjects() })
         fileName = self.rootPath_ + 'vo_' + cat.name() + '.cpp'
         outputfile.OutputFile(self, fileName, self.copyright_, self.bufferIncludes_)
