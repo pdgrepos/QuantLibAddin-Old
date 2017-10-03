@@ -34,12 +34,12 @@ class OutputFile(object):
     
     TRIM_WHITESPACE = re.compile(r'^ *', re.M)
     HEADER = """\
-// This file was generated automatically by %s.  If you edit this file
-// manually then your changes will be lost the next time gensrc runs.\n\n"""
+%(comment)s This file was generated automatically by %(filename)s.  If you edit this file
+%(comment)s manually then your changes will be lost the next time gensrc runs.\n\n"""
     UPDATE_MSG = '%-100s %10s'
     STUBFILE_NAME = """\
-// This source code file was generated from the following stub:
-//      %s\n\n"""
+%(comment)s This source code file was generated from the following stub:
+%(comment)s      %(filename)s\n\n"""
 
 
     #############################################
@@ -52,9 +52,11 @@ class OutputFile(object):
         self.outFile_.write(environment.config().copyrightBuffer() % 
             { 'copyright' : copyrightTrim } )
 
-    def printHeader(self):
+    def printHeader(self, commentPrefix):
         """Print the gensrc comment header for this source code file."""
-        self.outFile_.write(OutputFile.HEADER % os.path.basename(sys.argv[0]))
+        self.outFile_.write(OutputFile.HEADER % {
+            'filename' : os.path.basename(sys.argv[0]),
+            'comment' : commentPrefix })
 
     def close(self):
         """Close temp file and overwrite original if they are different."""
@@ -81,7 +83,7 @@ class OutputFile(object):
     # private member functions
     #############################################
 
-    def __init__(self, addin, fileName, copyright, buffer, printHeader = True):
+    def __init__(self, addin, fileName, copyright, buffer, printHeader = True, commentPrefix = "//"):
         """Open file and write header."""
         self.addin_ = addin
         self.fileName_ = fileName
@@ -90,8 +92,10 @@ class OutputFile(object):
         if copyright:
             self.printCopyright(copyright)
         if printHeader:
-            self.printHeader()
-        self.outFile_.write(OutputFile.STUBFILE_NAME % buffer.stubFileName())
+            self.printHeader(commentPrefix)
+        self.outFile_.write(OutputFile.STUBFILE_NAME % {
+            'filename' : buffer.stubFileName(),
+            'comment' : commentPrefix })
         self.outFile_.write(buffer.text())
         self.close()
 

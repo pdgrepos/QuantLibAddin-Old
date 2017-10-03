@@ -101,6 +101,7 @@ class ExcelAddin(addin.Addin):
         self.generateFunctions()
         self.generateFunctionCount()
         if self.exportSymbols_: self.generateExportSymbols()
+        if self.defSymbols_: self.generateDef()
         log.Log.instance().logMessage(' done generating %s.' % self.name_)
 
     def generateFunctions(self):
@@ -290,6 +291,17 @@ class ExcelAddin(addin.Addin):
         fileName = self.rootPath_ + 'functions/export.hpp'
         outputfile.OutputFile(self, fileName, self.copyright_, self.exportStub_)
 
+    def generateDef(self):
+        """Generate .def file that cause exported symbols to be available to
+        clients of this Addin."""
+        defSymbols = ''
+        for cat in self.categoryList_.categories(self.name_, self.coreCategories_, self.addinCategories_, supportedplatform.MANUAL):
+            for func in cat.functions(self.name_, supportedplatform.MANUAL):
+                defSymbols += '\t%s\n' % func.name()
+        self.defStub_.set({'defSymbols' : defSymbols})
+        fileName = self.rootPath_ + '/export.def'
+        outputfile.OutputFile(self, fileName, None, self.defStub_, True, ";")
+
     def generateFunctionCount(self):
         """Generate a header indicating the number of functions in this addin."""
         self.bufferNumFunc_.set({ 'functionCount' : self.functionCount_ })
@@ -379,4 +391,5 @@ class ExcelAddin(addin.Addin):
         """Load/unload class state to/from serializer object."""
         super(ExcelAddin, self).serialize(serializer)
         serializer.serializeBoolean(self, 'exportSymbols')
+        serializer.serializeBoolean(self, 'defSymbols', False)
 
