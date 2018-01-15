@@ -52,7 +52,8 @@ namespace QuantLibAddin {
 
         ObjectHandler::StrObjectPair link;
 
-        link.first = boost::get<std::string>(valueObject->getProperty("CurrentLink"));
+        const ObjectHandler::property_t& curLink = valueObject->getProperty("CurrentLink");
+        link.first = boost::get<std::string>(curLink);
         valueObject->setProperty("CurrentLink", std::string(""));
 
         ObjectHandler::StrObjectPair object = factory.restoreObject(valueObject, overwriteExisting);

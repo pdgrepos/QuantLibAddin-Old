@@ -115,7 +115,8 @@ namespace ObjectHandler {
         object.second = recreateObject(valueObject);
 
         // FIXME just call ValueObject::objectId()?
-        object.first = boost::get<std::string>(valueObject->getProperty("OBJECTID"));
+        const ObjectHandler::property_t& oid = valueObject->getProperty("OBJECTID");
+        object.first = boost::get<std::string>(oid);
         ObjectHandler::Repository::instance().storeObject(object.first, object.second, overwriteExisting);
 
         return object;
@@ -131,8 +132,8 @@ namespace ObjectHandler {
         for (i=objectList.begin(); i!=objectList.end(); ++i) {
             boost::shared_ptr<ObjectHandler::Object> object = *i;
             // FIXME just call ValueObject::objectId()?
-            std::string objectID
-                = boost::get<std::string>(object->properties()->getProperty("OBJECTID"));
+            const ObjectHandler::property_t& oid = object->properties()->getProperty("OBJECTID");
+            std::string objectID = boost::get<std::string>(oid);
             if (seen.find(objectID) == seen.end()) {
                 valueObjects.push_back(object->properties());
                 seen.insert(objectID);
