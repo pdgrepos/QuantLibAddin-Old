@@ -1,5 +1,7 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "QuantLibXLDynamic", "qlxl\QuantLibXLDynamic_vc11.vcxproj", "{AD2B301F-9217-467C-A5C2-DFF8A715D394}"
+EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ohgensrc", "..\ObjectHandler\gensrc\ohgensrc_vc11.vcxproj", "{88BE5568-6E55-41C5-A251-670FAFB44336}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "QuantLib", "..\QuantLib\QuantLib.vcxproj", "{AD0A27DA-91DA-46A2-ACBD-296C419ED3AA}"
@@ -15,8 +17,6 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "docs-QuantLibXL", "Docs\docs-QuantLibXL_vc11.vcxproj", "{A7768A12-75ED-480C-825A-BC70105281BC}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "docs-QuantLibAddin", "..\QuantLibAddin\Docs\docs-QuantLibAddin_vc11.vcxproj", "{3A1AC508-8F57-4318-AC89-EE55513FE506}"
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "QuantLibXLDynamic", "qlxl\QuantLibXLDynamic_vc11.vcxproj", "{AD2B301F-9217-467C-A5C2-DFF8A715D394}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ohxll", "..\ObjectHandler\ohxl\ohxll\ohxll_vc11.vcxproj", "{04D7369F-47BC-46B0-A374-41635A9656D8}"
 EndProject
