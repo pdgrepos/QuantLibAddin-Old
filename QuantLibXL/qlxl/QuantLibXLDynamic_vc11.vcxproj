@@ -345,6 +345,7 @@
     <ClCompile Include="functions\driftcalculators.cpp" />
     <ClCompile Include="functions\evolutiondescription.cpp" />
     <ClCompile Include="functions\exercise.cpp" />
+    <ClCompile Include="functions\floatfloatswap.cpp" />
     <ClCompile Include="functions\forwardrateagreement.cpp" />
     <ClCompile Include="functions\handles.cpp" />
     <ClCompile Include="functions\index.cpp" />
@@ -413,6 +414,7 @@
     <ClCompile Include="register\register_driftcalculators.cpp" />
     <ClCompile Include="register\register_evolutiondescription.cpp" />
     <ClCompile Include="register\register_exercise.cpp" />
+    <ClCompile Include="register\register_floatfloatswap.cpp" />
     <ClCompile Include="register\register_forwardrateagreement.cpp" />
     <ClCompile Include="register\register_handles.cpp" />
     <ClCompile Include="register\register_index.cpp" />

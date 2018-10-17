@@ -84,6 +84,9 @@
     <ClCompile Include="functions\exercise.cpp">
       <Filter>functions</Filter>
     </ClCompile>
+    <ClCompile Include="functions\floatfloatswap.cpp">
+      <Filter>functions</Filter>
+    </ClCompile>
     <ClCompile Include="functions\forwardrateagreement.cpp">
       <Filter>functions</Filter>
     </ClCompile>
@@ -283,6 +286,9 @@
       <Filter>register</Filter>
     </ClCompile>
     <ClCompile Include="register\register_exercise.cpp">
+      <Filter>register</Filter>
+    </ClCompile>
+    <ClCompile Include="register\register_floatfloatswap.cpp">
       <Filter>register</Filter>
     </ClCompile>
     <ClCompile Include="register\register_forwardrateagreement.cpp">

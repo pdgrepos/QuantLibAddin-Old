@@ -1,0 +1,149 @@
+<Category name='floatfloatswap'>
+  <description>functions to construct and use floatfloatswap objects.</description>
+  <displayName>Float Float Swap</displayName>
+  <xlFunctionWizardCategory>QuantLib - Financial</xlFunctionWizardCategory>
+  
+  <serializationIncludes>
+    <include>qlo/vanillaswap.hpp</include>
+    <include>qlo/floatfloatswap.hpp</include>
+    <include>qlo/indexes/iborindex.hpp</include>
+    <include>qlo/schedule.hpp</include>
+    <include>qlo/ratehelpers.hpp</include>
+
+    <include>ql/indexes/iborindex.hpp</include>
+  </serializationIncludes>
+ 
+  <addinIncludes>
+    <include>qlo/vanillaswap.hpp</include>
+    <include>qlo/floatfloatswap.hpp</include>
+    <include>qlo/indexes/iborindex.hpp</include>
+    <include>qlo/schedule.hpp</include>
+    <include>qlo/ratehelpers.hpp</include>
+
+    <include>ql/indexes/iborindex.hpp</include>
+  </addinIncludes>
+  <copyright>
+    Copyright (C) 2006, 2007, 2011, 2015 Ferdinando Ametrano
+    Copyright (C) 2005, 2006 Eric Ehlers
+    Copyright (C) 2005 Plamen Neykov
+    Copyright (C) 2005 Aurelien Chanudet
+  </copyright>
+  
+  <Functions>
+
+    <Constructor name='qlFloatFloatSwap'>
+      <libraryFunction>FloatFloatSwap</libraryFunction>
+      <SupportedPlatforms>
+        <!--SupportedPlatform name='Excel' calcInWizard='false'/-->
+        <SupportedPlatform name='Excel'/>
+        <SupportedPlatform name='Calc'/>
+        <SupportedPlatform name='Cpp'/>
+      </SupportedPlatforms>
+      <processorName>InstrumentProcessor</processorName>
+      <ParameterList>
+        <Parameters>
+          
+          <Parameter name='PayerReceiver' default='"Payer"'>
+            <type>QuantLib::VanillaSwap::Type</type>
+            <tensorRank>scalar</tensorRank>
+            <description>First leg payer or receiver.</description>
+          </Parameter>
+
+          <Parameter name='Nominal1'>
+            <type>double</type>
+            <tensorRank>scalar</tensorRank>
+            <description>First leg notional amount.</description>
+          </Parameter>
+
+          <Parameter name='Nominal2'>
+            <type>double</type>
+            <tensorRank>scalar</tensorRank>
+            <description>Second leg notional amount.</description>
+          </Parameter>
+
+          <Parameter name='Schedule1'>
+            <type>QuantLib::Schedule</type>
+            <superType>libraryClass</superType>
+            <tensorRank>scalar</tensorRank>
+            <description>First leg schedule object ID.</description>
+          </Parameter>
+
+          <Parameter name='Index1'>
+            <type>QuantLib::IborIndex</type>
+            <tensorRank>scalar</tensorRank>
+            <description>Fist leg index object ID.</description>
+          </Parameter>
+
+          <Parameter name='DayCounter1' exampleValue='30/360 (Bond Basis)'>
+            <type>QuantLib::DayCounter</type>
+            <tensorRank>scalar</tensorRank>
+            <description>First leg day counter (e.g. Actual/360).</description>
+          </Parameter>
+          
+          <Parameter name='Schedule2'>
+            <type>QuantLib::Schedule</type>
+            <superType>libraryClass</superType>
+            <tensorRank>scalar</tensorRank>
+            <description>Second leg schedule object ID.</description>
+          </Parameter>
+          
+          <Parameter name='Index2'>
+            <type>QuantLib::IborIndex</type>
+            <tensorRank>scalar</tensorRank>
+            <description>Second leg index object ID.</description>
+          </Parameter>
+
+          <Parameter name='DayCounter2' exampleValue='30/360 (Bond Basis)'>
+            <type>QuantLib::DayCounter</type>
+            <tensorRank>scalar</tensorRank>
+            <description>Second leg day counter (e.g. Actual/360).</description>
+          </Parameter>
+
+          <Parameter name='IntermediateCapitalExchange' default='false'>
+            <type>bool</type>
+            <tensorRank>scalar</tensorRank>
+            <description>Intermediate Capital Exchange.</description>
+          </Parameter>
+
+          <Parameter name='FinalCapitalExchange' default='false'>
+            <type>bool</type>
+            <tensorRank>scalar</tensorRank>
+            <description>Final Capital Exchange.</description>
+          </Parameter>
+
+          <Parameter name='Gearing1' default='1.00'>
+            <type>QuantLib::Real</type>
+            <tensorRank>scalar</tensorRank>
+            <description>First leg gearing.</description>
+          </Parameter>
+
+          <Parameter name='Spread1' exampleValue='0.0'>
+            <type>QuantLib::Real</type>
+            <tensorRank>scalar</tensorRank>
+            <description>First leg spread.</description>
+          </Parameter>
+
+        </Parameters>
+      </ParameterList>
+    </Constructor>
+
+    <Constructor name='qlFloatFloatSwapFromRateHelper'>
+      <libraryFunction>FloatFloatSwap</libraryFunction>
+      <SupportedPlatforms>
+        <!--SupportedPlatform name='Excel' calcInWizard='false'/-->
+        <SupportedPlatform name='Excel'/>
+        <SupportedPlatform name='Cpp'/>
+      </SupportedPlatforms>
+      <ParameterList>
+        <Parameters>
+          <Parameter name='FloatFloatSwapRateHelper'>
+            <type>QuantLib::FloatFloatSwapRateHelper</type>
+            <tensorRank>scalar</tensorRank>
+            <description>FloatFloatSwapRateHelper object ID.</description>
+          </Parameter>
+        </Parameters>
+      </ParameterList>
+    </Constructor>
+   
+  </Functions>
+</Category>

@@ -66,6 +66,7 @@
     <categoryName>volatilities</categoryName>
     <categoryName>volatility</categoryName>
     <categoryName>quotes</categoryName>
+    <categoryName>floatfloatswap</categoryName>    
     <categoryName>credit</categoryName> <!--RL ADD 2010-07-22-->
   </addinCategoryNames>
   

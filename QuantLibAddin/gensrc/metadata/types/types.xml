@@ -158,6 +158,7 @@
     <DataType defaultSuperType='libraryClass'>QuantLib::OISRateHelper</DataType>
     <DataType defaultSuperType='libraryClass'>QuantLib::ArithmeticOISRateHelper</DataType>
     <DataType defaultSuperType='libraryClass'>QuantLib::SwapRateHelper</DataType>
+    <DataType defaultSuperType='libraryClass'>QuantLib::FloatFloatSwapRateHelper</DataType>
     <DataType defaultSuperType='libraryClass'>QuantLib::Swaption</DataType>
     <DataType defaultSuperType='libraryClass'>QuantLib::SwaptionHelper</DataType>
     <DataType defaultSuperType='libraryClass'>QuantLib::CalibrationHelper</DataType>

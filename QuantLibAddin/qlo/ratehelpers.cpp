@@ -200,6 +200,38 @@ namespace QuantLibAddin {
         quoteName_ = f(properties->getSystemProperty("Rate"));
     }
 
+FloatFloatSwapRateHelper::FloatFloatSwapRateHelper(
+			const boost::shared_ptr<ObjectHandler::ValueObject>& properties,
+			const QuantLib::Handle<QuantLib::Quote>& basisSpread,
+			const QuantLib::Date& effectiveDate,
+			const QuantLib::Period& tenor,
+			const QuantLib::Calendar& calendar,
+			const QuantLib::BusinessDayConvention& convention,
+			const QuantLib::BusinessDayConvention& terminationDateConvention,
+			const boost::shared_ptr<QuantLib::IborIndex>& index1,
+			const boost::shared_ptr<QuantLib::IborIndex>& index2,
+			const QuantLib::Size& basisLeg,
+			const QuantLib::Handle<QuantLib::YieldTermStructure>& discountingCurve,
+			const bool& endOfMonth,
+			const QuantLib::DayCounter& dayCount1,
+			const QuantLib::DayCounter& dayCount2,
+			const QuantLib::Pillar::Choice& pillarChoice,
+			const QuantLib::Date& customPillarDate,
+			bool permanent)
+    : RateHelper(properties, permanent) {
+        libraryObject_ = shared_ptr<QuantLib::RateHelper>(new
+            QuantLib::FloatFloatSwapRateHelper(basisSpread,
+									 effectiveDate, tenor,
+									 calendar, convention,
+									 terminationDateConvention,
+									 index1, index2, basisLeg,
+									 discountingCurve, endOfMonth,
+									 dayCount1, dayCount2,
+									 pillarChoice,
+									 customPillarDate));
+        quoteName_ = f(properties->getSystemProperty("BasisSpread"));
+    }
+
     FraRateHelper::FraRateHelper(
             const shared_ptr<ValueObject>& properties,
             const QuantLib::Handle<QuantLib::Quote>& rate,

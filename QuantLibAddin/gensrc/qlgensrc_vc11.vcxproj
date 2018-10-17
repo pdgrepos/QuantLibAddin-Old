@@ -122,6 +122,7 @@
     <None Include="metadata\functions\timeseries.xml" />
     <None Include="metadata\functions\utilities.xml" />
     <None Include="metadata\functions\vanillaswap.xml" />
+    <None Include="metadata\functions\floatfloatswap.xml" />
     <None Include="metadata\functions\volatilities.xml" />
     <None Include="metadata\functions\abcd.xml" />
     <None Include="metadata\functions\accountingengines.xml" />

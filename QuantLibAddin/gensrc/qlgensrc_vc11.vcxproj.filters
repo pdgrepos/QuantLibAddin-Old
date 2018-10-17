@@ -213,6 +213,9 @@
     <None Include="metadata\functions\vanillaswap.xml">
       <Filter>functions</Filter>
     </None>
+    <None Include="metadata\functions\floatfloatswap.xml">
+      <Filter>functions</Filter>
+    </None>
     <None Include="metadata\functions\volatilities.xml">
       <Filter>functions</Filter>
     </None>

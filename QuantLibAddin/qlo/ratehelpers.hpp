@@ -154,6 +154,28 @@ namespace QuantLibAddin {
             bool permanent);
      };
 
+		  class FloatFloatSwapRateHelper : public RateHelper {
+      public:
+	    FloatFloatSwapRateHelper(
+			const boost::shared_ptr<ObjectHandler::ValueObject>& properties,
+			const QuantLib::Handle<QuantLib::Quote>& basisSpread,
+			const QuantLib::Date& effectiveDate,
+			const QuantLib::Period& tenor,
+			const QuantLib::Calendar& calendar,
+			const QuantLib::BusinessDayConvention& convention,
+			const QuantLib::BusinessDayConvention& terminationDateConvention,
+			const boost::shared_ptr<QuantLib::IborIndex>& index1,
+			const boost::shared_ptr<QuantLib::IborIndex>& index2,
+			const QuantLib::Size& basisLeg,
+			const QuantLib::Handle<QuantLib::YieldTermStructure>& discountingCurve,
+			const bool& endOfMonth,
+			const QuantLib::DayCounter& dayCount1,
+			const QuantLib::DayCounter& dayCount2,
+			const QuantLib::Pillar::Choice& pillarChoice,
+			const QuantLib::Date& customPillarDate,
+			bool permanent);
+     };
+
     class FraRateHelper : public RateHelper {
       public:
         FraRateHelper(

@@ -400,6 +400,97 @@
       </ParameterList>
     </Constructor>
 
+    <Constructor name='qlFloatFloatSwapRateHelper'>
+      <libraryFunction>FloatFloatSwapRateHelper</libraryFunction>
+      <SupportedPlatforms>
+        <!--SupportedPlatform name='Excel' calcInWizard='false'/-->
+        <SupportedPlatform name='Excel'/>
+        <SupportedPlatform name='Calc'/>
+        <SupportedPlatform name='Cpp'/>
+      </SupportedPlatforms>
+      <ParameterList>
+        <Parameters>
+          <Parameter name='BasisSpread' exampleValue='0.042322'>
+            <type>QuantLib::Quote</type>
+            <superType>libToHandle</superType>
+            <tensorRank>scalar</tensorRank>
+            <description>Basis Spread Quote.</description>
+          </Parameter>
+          <Parameter name='EffectiveDate' exampleValue='30/04/2018'>
+            <type>QuantLib::Date</type>
+            <tensorRank>scalar</tensorRank>
+            <description>Effective start date of the basis swap .</description>
+          </Parameter>
+          <Parameter name='Tenor' exampleValue='10Y'>
+            <type>QuantLib::Period</type>
+            <tensorRank>scalar</tensorRank>
+            <description>swap length (e.g. 5Y for five years).</description>
+          </Parameter>
+          <Parameter name='Calendar' exampleValue='TARGET'>
+            <type>QuantLib::Calendar</type>
+            <tensorRank>scalar</tensorRank>
+            <description>holiday calendar (e.g. TARGET).</description>
+          </Parameter>
+          <Parameter name='Convention' exampleValue='ModifiedFollowing'>
+            <type>QuantLib::BusinessDayConvention</type>
+            <tensorRank>scalar</tensorRank>
+            <description>Business day convention (e.g. Unadjusted).</description>
+          </Parameter>
+          <Parameter name='TerminationDateConvention' exampleValue='ModifiedFollowing'>
+            <type>QuantLib::BusinessDayConvention</type>
+            <tensorRank>scalar</tensorRank>
+            <description>Termination date convention (e.g. Unadjusted).</description>
+          </Parameter>
+          <Parameter name='Index1' exampleValue='Euribor3M'>
+            <type>QuantLib::IborIndex</type>
+            <tensorRank>scalar</tensorRank>
+            <description>First leg index.</description>
+          </Parameter>
+          <Parameter name='Index2' exampleValue='Euribor6M'>
+            <type>QuantLib::IborIndex</type>
+            <tensorRank>scalar</tensorRank>
+            <description>Second leg index. This must be the index linked to the curve to bootstrap.</description>
+          </Parameter>
+          <Parameter name='BasisLeg' exampleValue='1'>
+            <type>long</type>
+            <tensorRank>scalar</tensorRank>
+            <description>Leg where basis spread is added (use 0 for the first leg, 1 for the second leg, etc.).</description>
+          </Parameter>
+          <Parameter name='DiscountingCurve' exampleValue='EURYC' default='""'>
+            <type>QuantLib::YieldTermStructure</type>
+            <superType>libToHandle</superType>
+            <tensorRank>scalar</tensorRank>
+            <description>discounting YieldTermStructure object ID.</description>
+          </Parameter>
+          <Parameter name='EndOfMonth' exampleValue='true' default='false'>
+            <type>bool</type>
+            <tensorRank>scalar</tensorRank>
+            <description>End of Month rule (TRUE for end of month to end of month termination date, FALSE otherwise).</description>
+          </Parameter>
+          <Parameter name='DayCount1' exampleValue='30/360 (Bond Basis)'>
+            <type>QuantLib::DayCounter</type>
+            <tensorRank>scalar</tensorRank>
+            <description>First leg day counter (Default value is derived by the leg index).</description>
+          </Parameter>
+          <Parameter name='DayCount2' exampleValue='30/360 (Bond Basis)'>
+            <type>QuantLib::DayCounter</type>
+            <tensorRank>scalar</tensorRank>
+            <description>Second leg day counter ((Default value is derived by the leg index)).</description>
+          </Parameter>
+          <Parameter name='PillarDate' default='"MaturityDate"'>
+            <type>QuantLib::Pillar::Choice</type>
+            <tensorRank>scalar</tensorRank>
+            <description>Pillar date can be: MaturityDate, LastRelevantDate or CustomDate.</description>
+          </Parameter>
+          <Parameter name='CustomPillarDate' default='QuantLib::Date()'>
+            <type>QuantLib::Date</type>
+            <tensorRank>scalar</tensorRank>
+            <description>Custom Pillar Date.</description>
+          </Parameter>
+        </Parameters>
+      </ParameterList>
+    </Constructor>
+    
     <Member name='qlSwapRateHelperSpread' type='QuantLib::SwapRateHelper'>
       <description>returns the spread for the given SwapRateHelper object.</description>
       <libraryFunction>spread</libraryFunction>

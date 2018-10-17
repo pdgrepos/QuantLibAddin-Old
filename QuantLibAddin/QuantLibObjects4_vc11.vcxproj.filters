@@ -162,6 +162,9 @@
     <ClCompile Include="qlo\valueobjects\vo_exercise.cpp">
       <Filter>valueobjects</Filter>
     </ClCompile>
+    <ClCompile Include="qlo\valueobjects\vo_floatfloatswap.cpp">
+      <Filter>valueobjects</Filter>
+    </ClCompile>
     <ClCompile Include="qlo\valueobjects\vo_forwardrateagreement.cpp">
       <Filter>valueobjects</Filter>
     </ClCompile>
@@ -322,6 +325,9 @@
       <Filter>Instruments</Filter>
     </ClCompile>
     <ClCompile Include="qlo\europeanoption.cpp">
+      <Filter>Instruments</Filter>
+    </ClCompile>
+    <ClCompile Include="qlo\floatfloatswap.cpp">
       <Filter>Instruments</Filter>
     </ClCompile>
     <ClCompile Include="qlo\forwardrateagreement.cpp">
@@ -516,6 +522,9 @@
     <ClCompile Include="qlo\serialization\create\create_exercise.cpp">
       <Filter>serialization\create</Filter>
     </ClCompile>
+    <ClCompile Include="qlo\serialization\create\create_floatfloatswaps.cpp">
+      <Filter>serialization\create</Filter>
+    </ClCompile>
     <ClCompile Include="qlo\serialization\create\create_forwardrateagreement.cpp">
       <Filter>serialization\create</Filter>
     </ClCompile>
@@ -679,6 +688,9 @@
       <Filter>serialization\register</Filter>
     </ClCompile>
     <ClCompile Include="qlo\serialization\register\serialization_exercise.cpp">
+      <Filter>serialization\register</Filter>
+    </ClCompile>
+    <ClCompile Include="qlo\serialization\register\serialization_floatfloatswap.cpp">
       <Filter>serialization\register</Filter>
     </ClCompile>
     <ClCompile Include="qlo\serialization\register\serialization_forwardrateagreement.cpp">
@@ -965,6 +977,9 @@
     <ClInclude Include="qlo\valueobjects\vo_exercise.hpp">
       <Filter>valueobjects</Filter>
     </ClInclude>
+    <ClInclude Include="qlo\valueobjects\vo_floatfloatswap.hpp">
+      <Filter>valueobjects</Filter>
+    </ClInclude>
     <ClInclude Include="qlo\valueobjects\vo_forwardrateagreement.hpp">
       <Filter>valueobjects</Filter>
     </ClInclude>
@@ -1134,6 +1149,9 @@
       <Filter>Instruments</Filter>
     </ClInclude>
     <ClInclude Include="qlo\europeanoption.hpp">
+      <Filter>Instruments</Filter>
+    </ClInclude>
+    <ClInclude Include="qlo\floatfloatswap.hpp">
       <Filter>Instruments</Filter>
     </ClInclude>
     <ClInclude Include="qlo\forwardrateagreement.hpp">
@@ -1409,6 +1427,9 @@
     <ClInclude Include="qlo\serialization\create\create_exercise.hpp">
       <Filter>serialization\create</Filter>
     </ClInclude>
+    <ClInclude Include="qlo\serialization\create\create_floatfloatswap.hpp">
+      <Filter>serialization\create</Filter>
+    </ClInclude>
     <ClInclude Include="qlo\serialization\create\create_forwardrateagreement.hpp">
       <Filter>serialization\create</Filter>
     </ClInclude>
@@ -1575,6 +1596,9 @@
       <Filter>serialization\register</Filter>
     </ClInclude>
     <ClInclude Include="qlo\serialization\register\serialization_exercise.hpp">
+      <Filter>serialization\register</Filter>
+    </ClInclude>
+    <ClInclude Include="qlo\serialization\register\serialization_floatfloatswap.hpp">
       <Filter>serialization\register</Filter>
     </ClInclude>
     <ClInclude Include="qlo\serialization\register\serialization_forwardrateagreement.hpp">
