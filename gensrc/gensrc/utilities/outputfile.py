@@ -86,6 +86,8 @@ class OutputFile(object):
     def __init__(self, addin, fileName, copyright, buffer, printHeader = True, commentPrefix = "//"):
         """Open file and write header."""
         self.addin_ = addin
+        outPath = os.path.dirname(fileName)
+        if not os.path.exists(outPath): os.makedirs(outPath)
         self.fileName_ = fileName
         self.fileNameTemp_ = self.fileName_ + '.temp'
         self.outFile_ = file(self.fileNameTemp_, 'w')
