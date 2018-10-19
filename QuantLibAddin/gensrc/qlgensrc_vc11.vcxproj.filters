@@ -326,4 +326,9 @@
     </None>
     <None Include="Makefile.vc" />
   </ItemGroup>
+  <ItemGroup>
+    <Xml Include="metadata\functions\calibrationhelpers.xml">
+      <Filter>functions</Filter>
+    </Xml>
+  </ItemGroup>
 </Project>
