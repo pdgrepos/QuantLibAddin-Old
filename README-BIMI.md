@@ -18,13 +18,14 @@ To update the repositories, you have to:
      2. merge changes from the **upstream** repository into your local master
           1. `git fetch upstream master`
           2. `git merge upstream/master` ==> Should result in a FF
+          3. `git fetch upstream refs/tags/?_Upstream_Tag_Name_?:refs/tags/?_Local_Tag_Name_?`
      3. align your local **bimi** branch
           1. `git checkout bimi`
           2. `git fetch origin bimi`
           3. `git status` ==> *Your branch is behind 'origin/bimi' by x commits, and can be fast-forwarded.*
           4. `git merge origin/bimi` ==> Should result in a FF
      4. integrate the changes into the *bimi* branch
-          1. `git merge --no-commit --no-ff master`
+          1. `git merge --no-commit --no-ff _Local_Tag_Name_` (or `master`)
 2. Resolve conflicts, do tests, ...
 3. For each of the three repositories:
      1. commit your changes
