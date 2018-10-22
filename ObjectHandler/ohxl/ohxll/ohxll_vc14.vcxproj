@@ -21,6 +21,7 @@
   <PropertyGroup Label="Globals">
     <ProjectName>ohxll</ProjectName>
     <ProjectGuid>{04D7369F-47BC-46B0-A374-41635A9656D8}</ProjectGuid>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -82,13 +83,13 @@
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\..\build\vc140\ohxll\$(Platform)\$(Configuration)\</IntDir>
     <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\..\xll\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\..\build\vc140\ohxll\$(Platform)\$(Configuration)\</IntDir>
-    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ObjectHandler-xll-vc140-mt-1_10_0</TargetName>
-    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">ObjectHandler-xll-vc140-x64-mt-1_10_0</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ObjectHandler-xll-vc140-mt</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">ObjectHandler-xll-vc140-x64-mt</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.xll</TargetExt>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.xll</TargetExt>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.xll</TargetExt>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.xll</TargetExt>
-    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">ObjectHandler-xll-vc140-mt-gd-1_10_0</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">ObjectHandler-xll-vc140-mt-gd</TargetName>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">ObjectHandler-xll-vc140-x64-mt-gd-1_10_0</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -133,7 +134,7 @@
       <RandomizedBaseAddress>false</RandomizedBaseAddress>
       <DataExecutionPrevention>
       </DataExecutionPrevention>
-      <ImportLibrary>..\..\lib\ObjectHandler-xll-vc140-mt-gd-1_10_0.lib</ImportLibrary>
+      <ImportLibrary>..\..\lib\ObjectHandler-xll-vc140-mt-gd.lib</ImportLibrary>
       <TargetMachine>MachineX86</TargetMachine>
       <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
     </Link>
@@ -233,7 +234,7 @@
       <RandomizedBaseAddress>false</RandomizedBaseAddress>
       <DataExecutionPrevention>
       </DataExecutionPrevention>
-      <ImportLibrary>..\..\lib\ObjectHandler-xll-vc140-mt-1_10_0.lib</ImportLibrary>
+      <ImportLibrary>..\..\lib\ObjectHandler-xll-vc140-mt.lib</ImportLibrary>
       <TargetMachine>MachineX86</TargetMachine>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <OptimizeReferences>true</OptimizeReferences>

@@ -36,6 +36,8 @@
 #  define OBJHANDLER_LIB_TOOLSET "vc110"
 #elif (_MSC_VER == 1800)
 #  define OBJHANDLER_LIB_TOOLSET "vc120"
+#elif (_MSC_VER == 1900)
+#  define OBJHANDLER_LIB_TOOLSET "vc140"
 #else
 #  error "unknown Microsoft compiler"
 #endif
@@ -82,8 +84,8 @@
 
 
 #define OBJHANDLER_LIB_NAME "ObjectHandler" OBJHANDLER_LIB_TYPE "-" OBJHANDLER_LIB_TOOLSET OBJHANDLER_LIB_PLATFORM OBJHANDLER_LIB_THREAD_OPT OBJHANDLER_LIB_RT_OPT ".lib"
-
-#pragma comment(lib, OBJHANDLER_LIB_NAME)
+ 
+#pragma comment(lib, OBJHANDLER_LIB_NAME) 
 #ifdef BOOST_LIB_DIAGNOSTIC
 #  pragma message("Will (need to) link to lib file: " OBJHANDLER_LIB_NAME)
 #endif

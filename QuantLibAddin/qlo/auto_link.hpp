@@ -35,6 +35,8 @@
 #  define QLADDIN_LIB_TOOLSET "vc110"
 #elif (_MSC_VER == 1800)
 #  define QLADDIN_LIB_TOOLSET "vc120"
+#elif (_MSC_VER == 1900)
+#  define QLADDIN_LIB_TOOLSET "vc140"
 #else
 #  error "unknown Microsoft compiler"
 #endif
@@ -75,7 +77,7 @@
 #pragma comment(lib, QLADDIN_LIB_NAME)
 #ifdef BOOST_LIB_DIAGNOSTIC
 #  pragma message("Will (need to) link to lib file: " QLADDIN_LIB_NAME)
-#endif
+#endif  
 
 #endif
 
