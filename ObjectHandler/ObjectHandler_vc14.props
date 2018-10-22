@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="UserMacros">
+    <BOOST_ROOT Condition="'$(BOOST_ROOT)' == ''">$(SolutionDir)\..\..\..\PDG_Projects\Boost</BOOST_ROOT>
+    <BOOST_VER Condition="'$(BOOST_VER)' == ''">1_65_1</BOOST_VER>
+    <BOOST_BASE>$(BOOST_ROOT)\boost_$(BOOST_VER)</BOOST_BASE>
+    <BOOST_INCLUDES>$(BOOST_BASE)</BOOST_INCLUDES>
+    <BOOST_LIBS32>$(BOOST_BASE)\stage\lib</BOOST_LIBS32>
+    <BOOST_LIBS64>$(BOOST_BASE)\stage\win64\lib</BOOST_LIBS64>
+  </PropertyGroup>
+</Project>
