@@ -150,8 +150,8 @@ namespace QuantLibAddin {
         libraryObject_ = shared_ptr<QuantLib::Extrapolator>(new
             QuantLib::MixedLinearCubicInterpolation(
                                                 x_.begin(), x_.end(),
-                                                y_.begin(), n,
-                                                behavior, da, monotonic,
+                                                y_.begin(), n, behavior,
+                                                da, monotonic,
                                                 leftCondition, leftValue,
                                                 rightCondition, rightValue));
         qlInterpolation_ =

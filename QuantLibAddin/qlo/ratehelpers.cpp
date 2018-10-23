@@ -200,7 +200,7 @@ namespace QuantLibAddin {
         quoteName_ = f(properties->getSystemProperty("Rate"));
     }
 
-FloatFloatSwapRateHelper::FloatFloatSwapRateHelper(
+    FloatFloatSwapRateHelper::FloatFloatSwapRateHelper(
 			const boost::shared_ptr<ObjectHandler::ValueObject>& properties,
 			const QuantLib::Handle<QuantLib::Quote>& basisSpread,
 			const QuantLib::Date& effectiveDate,

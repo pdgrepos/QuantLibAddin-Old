@@ -32,7 +32,7 @@
 // be found at all.
 #if 0
 #include <log4cxx/log4cxxdefines.h>
-#if LOG4CXX_VERSION != 0x001000f8
+#if LOG4CXX_VERSION != 0x001000f10
     #error using an incorrect version of log4cxx, please update.
 #endif
 #endif
