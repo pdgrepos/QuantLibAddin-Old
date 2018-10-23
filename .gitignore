@@ -86,6 +86,8 @@ testCaseCollection.xml
 *.log
 *.sdf
 *.opensdf
+*.VC.db
+*.VC.opendb
 *.pch
 *.idb
 *.ipch
