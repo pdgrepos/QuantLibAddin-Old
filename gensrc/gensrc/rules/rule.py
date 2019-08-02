@@ -30,6 +30,7 @@ import os
 # The following allows the client application to place file codedict.py
 # in subdirectory 'code' of current directory.
 sys.path.append(os.getcwd() + '/code')
+
 import codedict
 
 def getCode(codeID):
@@ -158,10 +159,14 @@ class RuleGroup(serializable.Serializable):
     #############################################
 
     groupName_ = 'RuleGroups'
+    parIndex_ = 1
 
     #############################################
     # public interface
     #############################################
+    
+    def setParIndex(self, parIndex):
+        self.parIndex_ = parIndex
 
     def apply(self, param):
         """Apply all available Rules to given parameter."""
@@ -205,7 +210,8 @@ class RuleGroup(serializable.Serializable):
             common.SUPER_TYPE : self.param_.fullType().superType(),
             common.TENSOR_RANK : self.param_.tensorRank(),
             common.TYPE : self.param_.fullType().value(),
-            common.NAMESPACE : self.param_.nameSpace() }
+            common.NAMESPACE : self.param_.nameSpace(),
+            common.PAR_INDEX : self.parIndex_}
 
     def checkSkipFirst(self):
         return self.checkSkipFirst_

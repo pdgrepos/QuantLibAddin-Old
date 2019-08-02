@@ -22,11 +22,7 @@
 
 import sys
 import getopt
-from gensrc.addins import addinlist
 from gensrc.exceptions import excepthook
-from gensrc.configuration import initialization
-#from gensrc.configuration import environment
-import os
 
 USAGE_ERROR = """
 usage: %(scriptName)s -[flags] --oh_dir
@@ -34,6 +30,7 @@ usage: %(scriptName)s -[flags] --oh_dir
         x - Excel addin
         o - OpenOffice.org Calc addin
         p - C++ addin
+        y - Python
         v - ValueObjects code
         e - Enumerations
         l - Loops
@@ -58,12 +55,13 @@ sys.excepthook = excepthook.gensrc_excepthook
 # parse command line arguments
 
 try:
-    opts, args = getopt.getopt(sys.argv[1:], 'xopcgvelsdah', ['help', 'oh_dir='] )
+    opts, args1 = getopt.getopt(sys.argv[1:], 'xopycgvelsdah', ['help', 'oh_dir=', 'code_dir='] )
 except getopt.GetoptError:
     usage()
 
 addinIds = []
 ohDir=''
+code_dir=''
 buildAll = False
 buildIndividual = False
 
@@ -77,6 +75,9 @@ for o, v in opts:
     elif o == '-p':
         buildIndividual = True
         addinIds.append('p')
+    elif o == '-y':
+        buildIndividual = True
+        addinIds.append('y')
     #elif o == '-c':
     #    buildIndividual = True
     #    addinIds.append('c')
@@ -101,13 +102,24 @@ for o, v in opts:
     elif o == '-a':
         buildAll = True
         #addinIds = [ 'x', 'o', 'p', 'c', 'g', 'v', 'e', 'l', 's', 'd' ]
-        addinIds = [ 'x', 'p', 'v', 'e', 'l', 's', 'd' ]
+        addinIds = [ 'x', 'p','y', 'v', 'e', 'l', 's', 'd' ]
     elif o == '--oh_dir':
         ohDir = v
+    elif o == '--code_dir':
+        code_dir = v
     elif o in ('-h', '--help'):
         usage()
     else:
         usage()
+
+sys.path.append(code_dir)  
+       
+from gensrc.addins import addinlist
+
+from gensrc.configuration import initialization
+#from gensrc.configuration import environment
+import os
+
 
 if buildAll and buildIndividual:
     sys.exit('flag -a cannot be combined with other flags')

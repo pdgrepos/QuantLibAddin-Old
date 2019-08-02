@@ -1,0 +1,2 @@
+    PyObject* %(functionName)s(PyObject *m, PyObject * args);
+

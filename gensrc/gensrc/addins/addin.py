@@ -155,7 +155,7 @@ class Addin(serializable.Serializable):
         """Perform post serialization initialization."""
 
         if self.loadRules_:
-            serializer = xmlreader.XmlReader('metadata/rules/' + self.name_.lower())
+            serializer = xmlreader.XmlReader(environment.Environment.instance().configuration().metadataFolder() + '/metadata/rules/' + self.name_.lower())
             serializer.serializeObjectPropertyDict(self, rule.RuleGroup)
 
         self.rootPath_ = environment.Environment.instance().addinRootPath() + self.rootDirectory_

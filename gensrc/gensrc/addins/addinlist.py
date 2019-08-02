@@ -22,6 +22,7 @@ instance of gensrc."""
 from gensrc.addins import excel
 from gensrc.addins import calc
 from gensrc.addins import cpp
+from gensrc.addins import python
 #from gensrc.addins import c
 #from gensrc.addins import guile
 from gensrc.addins import doxygen
@@ -54,6 +55,7 @@ addin           unchanged   updated     created     total'''
         'x' : (excel.ExcelAddin, 'excel'),
         'o' : (calc.CalcAddin, 'calc'),
         'p' : (cpp.CppAddin, 'cpp'),
+        'y' : (python.PythonAddin, 'python'),
         #'c' : (c.CAddin, 'c'),
         #'g' : (guile.GuileAddin, 'guile'),
         'v' : (valueobjects.ValueObjects, 'valueobjects'),

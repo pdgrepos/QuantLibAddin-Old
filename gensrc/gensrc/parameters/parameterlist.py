@@ -43,7 +43,10 @@ class ParameterList(serializable.Serializable):
         """Generate source code relating to a list of function parameters."""
         codeItems = []
         firstItem = True
+        parIndex = 0
         for param in self.parameters_:
+            ruleGroup.setParIndex(parIndex)
+            parIndex = parIndex + 1
             if firstItem:
                 firstItem = False
                 if ruleGroup.checkSkipFirst() and self.skipFirst_: continue
@@ -93,6 +96,14 @@ class ParameterList(serializable.Serializable):
         for param in self.parameters_:
             param.printDebug()
 
+    def parametersSize(self):
+        """Print debug information to stdout."""
+        res = self.parameterCount_
+        for param in self.parameters_:
+            if param.ignore_:
+                res=res-1
+        return res
+        
     #############################################
     # serializer interface
     #############################################
