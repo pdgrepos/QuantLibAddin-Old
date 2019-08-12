@@ -55,7 +55,7 @@ sys.excepthook = excepthook.gensrc_excepthook
 # parse command line arguments
 
 try:
-    opts, args1 = getopt.getopt(sys.argv[1:], 'xopycgvelsdah', ['help', 'oh_dir=', 'code_dir='] )
+    opts, args = getopt.getopt(sys.argv[1:], 'xopycgvelsdah', ['help', 'oh_dir=', 'code_dir='] )
 except getopt.GetoptError:
     usage()
 

@@ -93,6 +93,7 @@ class PythonAddin(addin.Addin):
             'enumConversions' : func.parameterList().generate(self.enumConversions_),
             'functionBody' : func.generateBody(self),
             'functionName' : func.name(),
+            'libConversions' : func.parameterList().generate(self.libraryConversions_),
             'objectConversions' : func.parameterList().generate(self.objectConversions_),
             'refConversions' : func.parameterList().generate(self.referenceConversions_),
             'returnConversion' : self.returnConversion_.apply(func.returnValue()),

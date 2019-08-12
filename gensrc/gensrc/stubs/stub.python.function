@@ -4,7 +4,7 @@
         try {
         bool Overwrite = true;
         const std::vector<PyObject*>& objects = splitArgs(args, %(nArgs)s);
-%(cppConversions)s%(enumConversions)s%(objectConversions)s%(refConversions)s%(functionBody)s%(returnConversion)s
+%(cppConversions)s%(libConversions)s%(enumConversions)s%(objectConversions)s%(refConversions)s%(functionBody)s%(returnConversion)s
 
         }
         CATCH_PYDG_ERRORS(m);
