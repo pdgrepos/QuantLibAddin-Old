@@ -90,7 +90,7 @@ class OutputFile(object):
         if not os.path.exists(outPath): os.makedirs(outPath)
         self.fileName_ = fileName
         self.fileNameTemp_ = self.fileName_ + '.temp'
-        self.outFile_ = file(self.fileNameTemp_, 'w')
+        self.outFile_ = open(self.fileNameTemp_, 'w')
         if copyright:
             self.printCopyright(copyright)
         if printHeader:

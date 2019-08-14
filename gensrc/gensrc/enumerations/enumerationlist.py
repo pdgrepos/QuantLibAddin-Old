@@ -126,7 +126,7 @@ class EnumerationList(object):
         ret = []
         for p in parameterList:
             if p.fullType().superType() == common.ENUM \
-            and self.typeDict_.has_key(p.fullType().value()):
+            and (p.fullType().value() in self.typeDict_):
                 ret.append(self.typeDict_[p.fullType().value()])
         return ret
 

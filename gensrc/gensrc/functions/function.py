@@ -51,17 +51,17 @@ class Function(serializable.Serializable):
 
     def platformSupported(self, platformName, implementation):
         """Determine whether this function supported by given platform."""
-        return self.supportedPlatforms_.has_key(platformName) \
+        return (platformName in self.supportedPlatforms_) \
             and self.supportedPlatforms_[platformName].implNum() >= implementation
 
     def xlMacro(self):
         """Determine whether this function requires macro on excel platform."""
-        return self.supportedPlatforms_.has_key('Excel') \
+        return ('Excel' in self.supportedPlatforms_) \
             and self.supportedPlatforms_['Excel'].xlMacro()
 
     def calcInWizard(self):
         """Determine whether to calc this function under the Excel Function Wizard."""
-        return self.supportedPlatforms_.has_key('Excel') \
+        return ('Excel' in self.supportedPlatforms_) \
             and self.supportedPlatforms_['Excel'].calcInWizard()
 
     def supportedPlatforms(self):

@@ -56,7 +56,7 @@ class CategoryList(object):
         if not configPath: return
         for categoryName in catList:
             cat = utilities.serializeObject(category.Category, configPath + 'metadata/functions/' + categoryName)
-            if self.categoryDict_.has_key(cat.name()):
+            if (cat.name in self.categoryDict_):
                 raise exceptions.DuplicateNameException(cat.name())
             self.categoryDict_[cat.name()] = cat
     

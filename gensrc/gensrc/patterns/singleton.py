@@ -27,7 +27,7 @@ class MetaSingleton(type):
     """Meta type for the Singleton class."""
 
     def __new__(metaclass, strName, tupBases, dict):
-        if dict.has_key('__new__'):
+        if ('__new__' in dict):
             raise exceptions.SingletonOverrideNewException()
         return super(MetaSingleton,metaclass).__new__(metaclass, strName, tupBases, dict)
         
