@@ -102,6 +102,9 @@ DLLEXPORT int xlAutoOpen() {
 
     try {
 
+        // Call a revaluation of the time environment variables to avoid the PST default.
+        _tzset();
+
         Excel(xlGetName, &xDll, 0);
 
 #ifdef XLL_STATIC
