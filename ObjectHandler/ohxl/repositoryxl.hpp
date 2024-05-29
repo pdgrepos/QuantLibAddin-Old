@@ -85,7 +85,7 @@ namespace ObjectHandler {
         //! Clear any error associated with VBA.
         void clearVbaError() { vbaError_ = ""; }
         //! Clear any error associated with the current range.
-        void clearError();
+        void clearError(const std::string &refString);
         //@}
 
         //! \name Logging

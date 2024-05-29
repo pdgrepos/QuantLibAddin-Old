@@ -51,14 +51,14 @@ namespace ObjectHandler {
     }
 
     FunctionCall::~FunctionCall() {
+        instance_ = 0;
         if (!error_) {
             if (callerType_ == CallerType::Cell) {
-                RepositoryXL::instance().clearError();
+                RepositoryXL::instance().clearError(refStr_);
             } else if (callerType_ == CallerType::VBA || callerType_ == CallerType::Menu) {
                 RepositoryXL::instance().clearVbaError();
             }
         }
-        instance_ = 0;
     }
 
     FunctionCall &FunctionCall::instance() {

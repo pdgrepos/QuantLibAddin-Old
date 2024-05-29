@@ -180,8 +180,7 @@ namespace ObjectHandler {
         return "";
     }
 
-    void RepositoryXL::clearError() {
-        string refStr = FunctionCall::instance().refStr();
+    void RepositoryXL::clearError(const std::string &refStr) {
         errorMessageMap_.erase(boost::algorithm::to_upper_copy(refStr));
     }
 
