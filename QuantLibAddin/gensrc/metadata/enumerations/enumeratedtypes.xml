@@ -589,6 +589,10 @@
           <value>QuantLib::UnitedStates(QuantLib::UnitedStates::Settlement)</value>
         </EnumeratedType>
         <EnumeratedType>
+          <string>UnitedStates::SOFR</string>
+          <value>QuantLib::UnitedStates(QuantLib::UnitedStates::SOFR)</value>
+        </EnumeratedType>
+        <EnumeratedType>
           <string>WeekendsOnly</string>
           <value>QuantLib::WeekendsOnly()</value>
         </EnumeratedType>
