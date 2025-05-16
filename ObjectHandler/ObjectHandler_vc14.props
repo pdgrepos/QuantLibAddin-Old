@@ -9,11 +9,11 @@
     <BOOST_LIBS64>$(BOOST_BASE)\stage\win64\lib</BOOST_LIBS64>
   </PropertyGroup>
   <PropertyGroup Label="UserMacros">
-    <msvcTag Condition="'$(VisualStudioVersion)' == '10.0'">vc100</msvcTag>
-    <msvcTag Condition="'$(VisualStudioVersion)' == '11.0'">vc110</msvcTag>
-    <msvcTag Condition="'$(VisualStudioVersion)' == '12.0'">vc120</msvcTag>
-    <msvcTag Condition="'$(VisualStudioVersion)' == '13.0'">vc130</msvcTag>
-    <msvcTag Condition="'$(VisualStudioVersion)' == '14.0'">vc140</msvcTag>
-    <msvcTag Condition="'$(VisualStudioVersion)' == '15.0'">vc141</msvcTag>
+    <msvcTag Condition="'$(PlatformToolset)' == 'v100'">vc100</msvcTag>
+    <msvcTag Condition="'$(PlatformToolset)' == 'v110'">vc110</msvcTag>
+    <msvcTag Condition="'$(PlatformToolset)' == 'v120'">vc120</msvcTag>
+    <msvcTag Condition="'$(PlatformToolset)' == 'v130'">vc130</msvcTag>
+    <msvcTag Condition="'$(PlatformToolset)' == 'v140'">vc140</msvcTag>
+    <msvcTag Condition="'$(PlatformToolset)' == 'v150'">vc141</msvcTag>
   </PropertyGroup>
 </Project>
