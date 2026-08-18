@@ -5,7 +5,7 @@
   <rootDirectory>./../QuantLibPy/py_quantlib</rootDirectory>
   <moduleName>quantlib</moduleName>
   <prefix>pyql</prefix>
-  <coreCategories>true</coreCategories>
+  <coreCategories>false</coreCategories>
   <addinCategories>true</addinCategories>
 
   <copyright>

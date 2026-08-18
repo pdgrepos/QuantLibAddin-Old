@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="module.cpp" />
+    <ClCompile Include="pyql_pricingengines.cpp" />
+    <ClCompile Include="pyql_schedule.cpp" />
+    <ClCompile Include="pyql_settings.cpp" />
+    <ClCompile Include="py_local_enumerations.cpp" />
+    <ClCompile Include="pyql_assetswap.cpp" />
+    <ClCompile Include="pyql_bonds.cpp" />
+    <ClCompile Include="pyql_btp.cpp" />
+    <ClCompile Include="pyql_calendar.cpp" />
+    <ClCompile Include="pyql_instruments.cpp" />
+    <ClCompile Include="pyql_index.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="pyql_defines.hpp" />
+    <ClInclude Include="pyql_pricingengines.hpp" />
+    <ClInclude Include="pyql_schedule.hpp" />
+    <ClInclude Include="pyql_settings.hpp" />
+    <ClInclude Include="py_local_enumerations.hpp" />
+    <ClInclude Include="pyql_assetswap.hpp" />
+    <ClInclude Include="pyql_bonds.hpp" />
+    <ClInclude Include="pyql_btp.hpp" />
+    <ClInclude Include="pyql_calendar.hpp" />
+    <ClInclude Include="pyql_instruments.hpp" />
+    <ClInclude Include="pyql_index.hpp" />
+  </ItemGroup>
+</Project>

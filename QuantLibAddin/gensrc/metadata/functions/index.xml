@@ -522,6 +522,7 @@
         <SupportedPlatform name='Excel'/>
         <SupportedPlatform name='Calc'/>
         <SupportedPlatform name='Cpp'/>
+        <SupportedPlatform name='Python'/>
       </SupportedPlatforms>
       <processorName>IndexProcessor</processorName>
       <ParameterList>

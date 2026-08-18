@@ -1,0 +1,11 @@
+#include "pyql_%(categoryName)s.hpp"
+
+%(categoryIncludes)s
+#include <Conversions/all.hpp>
+#include "py_utilities.hpp"
+#include "ohpy/py_shared_state.hpp"
+#include "ohpy/py_enum_registry.hpp"
+
+namespace %(namespaceObjects)sPy {
+%(bufferCpp)s}
+

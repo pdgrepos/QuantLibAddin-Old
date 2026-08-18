@@ -16,6 +16,7 @@
         <SupportedPlatform name='Guile'/>
         <SupportedPlatform name='C'/>
         <SupportedPlatform name='Cpp'/>
+        <SupportedPlatform name='Python'/>
       </SupportedPlatforms>
       <ParameterList>
         <Parameters/>
@@ -36,6 +37,7 @@
         <SupportedPlatform name='Guile'/>
         <SupportedPlatform name='C'/>
         <SupportedPlatform name='Cpp'/>
+        <SupportedPlatform name='Python'/>
       </SupportedPlatforms>
       <ParameterList>
         <Parameters>

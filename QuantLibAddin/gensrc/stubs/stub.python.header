@@ -1,0 +1,10 @@
+#ifndef pyql_%(categoryName)s_hpp
+#define pyql_%(categoryName)s_hpp
+
+#include <Python.h>
+
+namespace %(namespaceObjects)sPy {
+
+%(bufferHpp)s}
+
+#endif

@@ -1,0 +1,207 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>14.0</VCProjectVersion>
+    <ProjectGuid>{28F6146F-9862-4C07-A931-F3DE0A093BB7}</ProjectGuid>
+    <RootNamespace>py_quantlib</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WIN_ADDRESS_MODEL>win32</WIN_ADDRESS_MODEL>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WIN_ADDRESS_MODEL>win32</WIN_ADDRESS_MODEL>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WIN_ADDRESS_MODEL>win64</WIN_ADDRESS_MODEL>
+    <PDG_ADDRESS_MODEL>amd64</PDG_ADDRESS_MODEL>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WIN_ADDRESS_MODEL>win64</WIN_ADDRESS_MODEL>
+    <PDG_ADDRESS_MODEL>amd64</PDG_ADDRESS_MODEL>
+  </PropertyGroup>
+  <PropertyGroup Label="UserMacros">
+    <BOOST_VER Condition="'$(BOOST_VER)' == ''">1_71_0</BOOST_VER>
+    <BOOST_BASE>$(BOOST_ROOT)\boost_$(BOOST_VER)</BOOST_BASE>
+    <BOOST_INCLUDES>$(BOOST_BASE)</BOOST_INCLUDES>
+    <BOOST_LIBS32>$(BOOST_BASE)\stage\lib</BOOST_LIBS32>
+    <BOOST_LIBS64>$(BOOST_BASE)\stage\win64\lib</BOOST_LIBS64>
+    <QL_ROOT>C:\Projects\3rdPartyLibs\quantlib</QL_ROOT>
+    <OH_INCLUDES>$(QL_ROOT)\ObjectHandler</OH_INCLUDES>
+    <QL_INCLUDES>$(QL_ROOT)\Quantlib</QL_INCLUDES>
+    <QLADDIN_INCLUDES>$(QL_ROOT)\QuantLibAddin</QLADDIN_INCLUDES>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <TargetExt>.pyd</TargetExt>
+    <OutDir>$(SolutionDir)\QuantlibPython\build\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
+    <TargetName>$(ProjectName)_d</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <TargetExt>.pyd</TargetExt>
+    <OutDir>$(SolutionDir)\QuantlibPython\build\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <TargetExt>.pyd</TargetExt>
+    <OutDir>$(SolutionDir)\QuantlibPython\build\$(Platform)\$(Configuration)\</OutDir>
+    <TargetName>$(ProjectName)</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <TargetExt>.pyd</TargetExt>
+    <OutDir>$(SolutionDir)\QuantlibPython\build\$(Platform)\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(PDG_PYTHON_PATH)\include;$(BOOST_INCLUDES);$(QL_INCLUDES);$(OH_INCLUDES);$(QLADDIN_INCLUDES);$(QLADDIN_INCLUDES)\qlo;$(QLADDIN_INCLUDES)\qlo\Conversions</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>Py_LIMITED_API;XLL_IMPORTS;_WINDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>%PDG_PYTHON_PATH%\libs</AdditionalLibraryDirectories>
+      <AdditionalDependencies>py_oh.lib;ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(PDG_PYTHON_PATH)\include;$(BOOST_INCLUDES);$(QL_INCLUDES);$(OH_INCLUDES);$(QLADDIN_INCLUDES);$(QLADDIN_INCLUDES)\qlo;$(QLADDIN_INCLUDES)\qlo\Conversions</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>Py_LIMITED_API;XLL_IMPORTS;_WINDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(BOOST_LIBS64);$(PDG_PYTHON_PATH)\libs;$(QL_ROOT)\ObjectHandler\lib;$(QL_ROOT)\Quantlib\lib;$(QL_ROOT)\QuantLibAddin\lib;</AdditionalLibraryDirectories>
+      <AdditionalDependencies>py_oh.lib;QuantLib-vc140-x64-mt-gd.lib;QuantLibObjects-vc140-x64-mt-gd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(PDG_PYTHON_PATH)\include;$(BOOST_INCLUDES);$(QL_INCLUDES);$(OH_INCLUDES);$(QLADDIN_INCLUDES);$(QLADDIN_INCLUDES)\qlo;$(QLADDIN_INCLUDES)\qlo\Conversions</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>Py_LIMITED_API;XLL_IMPORTS;_WINDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>$(BOOST_LIBS32);$(PDG_PYTHON_PATH)\libs</AdditionalLibraryDirectories>
+      <AdditionalDependencies>py_oh.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(PDG_PYTHON_PATH)\include;$(BOOST_INCLUDES);$(QL_INCLUDES);$(OH_INCLUDES);$(QLADDIN_INCLUDES);$(QLADDIN_INCLUDES)\qlo;$(QLADDIN_INCLUDES)\qlo\Conversions</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>BOOST_DISABLE_ASSERTS;XLL_IMPORTS;_WINDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>$(BOOST_LIBS64);$(PDG_PYTHON_PATH)\libs;$(QL_ROOT)\ObjectHandler\lib;$(QL_ROOT)\Quantlib\lib;$(QL_ROOT)\QuantLibAddin\lib;$(QL_ROOT)\ObjectHandler\ohpy\OhPython\build\x64\Release</AdditionalLibraryDirectories>
+      <AdditionalDependencies>py_oh.lib;ws2_32.lib;QuantLib-vc140-x64-mt.lib;QuantLibObjects-vc140-x64-mt.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalOptions>/FORCE:MULTIPLE %(AdditionalOptions)</AdditionalOptions>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="module.cpp" />
+    <ClCompile Include="pyql_assetswap.cpp" />
+    <ClCompile Include="pyql_bonds.cpp" />
+    <ClCompile Include="pyql_btp.cpp" />
+    <ClCompile Include="pyql_calendar.cpp" />
+    <ClCompile Include="pyql_index.cpp" />
+    <ClCompile Include="pyql_instruments.cpp" />
+    <ClCompile Include="pyql_pricingengines.cpp" />
+    <ClCompile Include="pyql_schedule.cpp" />
+    <ClCompile Include="pyql_settings.cpp" />
+    <ClCompile Include="py_local_enumerations.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="pyql_assetswap.hpp" />
+    <ClInclude Include="pyql_bonds.hpp" />
+    <ClInclude Include="pyql_btp.hpp" />
+    <ClInclude Include="pyql_calendar.hpp" />
+    <ClInclude Include="pyql_defines.hpp" />
+    <ClInclude Include="pyql_index.hpp" />
+    <ClInclude Include="pyql_instruments.hpp" />
+    <ClInclude Include="pyql_pricingengines.hpp" />
+    <ClInclude Include="pyql_schedule.hpp" />
+    <ClInclude Include="pyql_settings.hpp" />
+    <ClInclude Include="py_local_enumerations.hpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
