@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="module.cpp" />
+    <ClCompile Include="..\oh\logger.cpp">
+      <Filter>oh</Filter>
+    </ClCompile>
+    <ClCompile Include="..\oh\processor.cpp">
+      <Filter>oh</Filter>
+    </ClCompile>
+    <ClCompile Include="..\oh\repository.cpp">
+      <Filter>oh</Filter>
+    </ClCompile>
+    <ClCompile Include="..\oh\serializationfactory.cpp">
+      <Filter>oh</Filter>
+    </ClCompile>
+    <ClCompile Include="..\oh\utilities.cpp">
+      <Filter>oh</Filter>
+    </ClCompile>
+    <ClCompile Include="py_enumregistry.cpp" />
+    <ClCompile Include="pyoh_enumerations.cpp" />
+    <ClCompile Include="pyoh_garbagecollection.cpp" />
+    <ClCompile Include="pyoh_group.cpp" />
+    <ClCompile Include="pyoh_logging.cpp" />
+    <ClCompile Include="pyoh_objects.cpp" />
+    <ClCompile Include="pyoh_ohutils.cpp" />
+    <ClCompile Include="pyoh_range.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="oh">
+      <UniqueIdentifier>{09aca5a4-806e-4bfd-a674-f8d76f6c8c0c}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\oh\exception.hpp">
+      <Filter>oh</Filter>
+    </ClInclude>
+    <ClInclude Include="..\oh\group.hpp">
+      <Filter>oh</Filter>
+    </ClInclude>
+    <ClInclude Include="..\oh\iless.hpp">
+      <Filter>oh</Filter>
+    </ClInclude>
+    <ClInclude Include="..\oh\libraryobject.hpp">
+      <Filter>oh</Filter>
+    </ClInclude>
+    <ClInclude Include="..\oh\logger.hpp">
+      <Filter>oh</Filter>
+    </ClInclude>
+    <ClInclude Include="..\oh\object.hpp">
+      <Filter>oh</Filter>
+    </ClInclude>
+    <ClInclude Include="..\oh\objecthandler.hpp">
+      <Filter>oh</Filter>
+    </ClInclude>
+    <ClInclude Include="..\oh\objectwrapper.hpp">
+      <Filter>oh</Filter>
+    </ClInclude>
+    <ClInclude Include="..\oh\observable.hpp">
+      <Filter>oh</Filter>
+    </ClInclude>
+    <ClInclude Include="..\oh\ohdefines.hpp">
+      <Filter>oh</Filter>
+    </ClInclude>
+    <ClInclude Include="..\oh\processor.hpp">
+      <Filter>oh</Filter>
+    </ClInclude>
+    <ClInclude Include="..\oh\property.hpp">
+      <Filter>oh</Filter>
+    </ClInclude>
+    <ClInclude Include="..\oh\range.hpp">
+      <Filter>oh</Filter>
+    </ClInclude>
+    <ClInclude Include="..\oh\repository.hpp">
+      <Filter>oh</Filter>
+    </ClInclude>
+    <ClInclude Include="..\oh\serializationfactory.hpp">
+      <Filter>oh</Filter>
+    </ClInclude>
+    <ClInclude Include="..\oh\singleton.hpp">
+      <Filter>oh</Filter>
+    </ClInclude>
+    <ClInclude Include="..\oh\utilities.hpp">
+      <Filter>oh</Filter>
+    </ClInclude>
+    <ClInclude Include="..\oh\valueobject.hpp">
+      <Filter>oh</Filter>
+    </ClInclude>
+    <ClInclude Include="py_shared_state.hpp" />
+    <ClInclude Include="py_enum_registry.hpp" />
+    <ClInclude Include="py_enumregistry.hpp" />
+    <ClInclude Include="py_oh_utilities.hpp" />
+    <ClInclude Include="pyoh_defines.hpp" />
+    <ClInclude Include="pyoh_enumerations.hpp" />
+    <ClInclude Include="pyoh_garbagecollection.hpp" />
+    <ClInclude Include="pyoh_group.hpp" />
+    <ClInclude Include="pyoh_logging.hpp" />
+    <ClInclude Include="pyoh_objects.hpp" />
+    <ClInclude Include="pyoh_ohutils.hpp" />
+    <ClInclude Include="pyoh_range.hpp" />
+    <ClInclude Include="py_utilities.hpp" />
+  </ItemGroup>
+</Project>

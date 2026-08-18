@@ -32,7 +32,7 @@ $(BUILD_DIR) :
 #PYTHON=C:\Python27\python.exe
 
 $(BUILDFLAG) : $(INPUTS) $(BUILD_DIR)
-    $(PYTHON) $(GENSRC_DIR)\gensrc.py -xdlv --oh_dir=$(OH_DIR)
+    $(PYTHON) $(GENSRC_DIR)\gensrc.py -xdlvy --oh_dir=$(OH_DIR)
     echo flagged > $@
 
 CLEAN :

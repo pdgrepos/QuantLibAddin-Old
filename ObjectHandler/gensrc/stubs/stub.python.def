@@ -1,0 +1,11 @@
+#ifndef py_defines_hpp
+#define py_defines_hpp
+%(includeFiles)s
+#include "py_shared_state.hpp"
+
+static PyMethodDef py_%(prefix)s_methods[] = {
+    { "error_out", (PyCFunction)error_out, METH_NOARGS, nullptr },%(defSymbols)s
+    { nullptr, nullptr, 0, nullptr }
+};
+
+#endif

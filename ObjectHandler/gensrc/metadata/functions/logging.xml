@@ -76,6 +76,7 @@
       <alias>ObjectHandler::logSetLevel</alias>
       <SupportedPlatforms>
         <SupportedPlatform name='Excel'/>
+        <SupportedPlatform name='Python'/>
         <SupportedPlatform name='Calc'/>
       </SupportedPlatforms>
       <ParameterList>
@@ -125,6 +126,7 @@
       <alias>ObjectHandler::logFile</alias>
       <SupportedPlatforms>
         <SupportedPlatform name='Excel'/>
+        <SupportedPlatform name='Python'/>
       </SupportedPlatforms>
       <ParameterList>
         <Parameters/>
@@ -135,12 +137,13 @@
         <description>returns log file name.</description>
       </ReturnValue>
     </Procedure>
-    
+
     <Procedure name='ohLogLevel'>
       <description>get log level.</description>
       <alias>ObjectHandler::logLevel</alias>
       <SupportedPlatforms>
         <SupportedPlatform name='Excel'/>
+        <SupportedPlatform name='Python'/>
       </SupportedPlatforms>
       <ParameterList>
         <Parameters/>

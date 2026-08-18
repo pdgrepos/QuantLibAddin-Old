@@ -1,0 +1,24 @@
+
+<Addin name='Python'>
+
+  <relativePath>./../QuantLibPy/py_quantlib</relativePath>
+  <rootDirectory>./../QuantLibPy/py_quantlib</rootDirectory>
+  <moduleName>quantlib</moduleName>
+  <prefix>pyql</prefix>
+  <coreCategories>true</coreCategories>
+  <addinCategories>true</addinCategories>
+
+  <copyright>
+    Copyright (C) 2019 Giorgio Facchinetti
+  </copyright>
+
+  <Buffers>
+    <Buffer name='bufferDeclaration' fileName='stub.python.declaration'/>
+    <Buffer name='bufferFunction' fileName='stub.python.function'/>
+    <Buffer name='bufferLoop' fileName='stub.python.loop'/>
+    <Buffer name='bufferBody' fileName='stub.python.body' local='true'/>
+    <Buffer name='bufferHeader' fileName='stub.python.header' local='true'/>
+    <Buffer name='defStub' fileName='stub.python.def' local='true'/>
+  </Buffers>
+
+</Addin>

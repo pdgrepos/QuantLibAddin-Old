@@ -18,6 +18,7 @@
       <alias>ObjectHandler::Repository::instance().creationTime</alias>
       <SupportedPlatforms>
         <SupportedPlatform name='Excel'/>
+        <SupportedPlatform name='Python'/>
       </SupportedPlatforms>
       <ParameterList>
         <Parameters>
@@ -162,7 +163,7 @@
         <tensorRank>vector</tensorRank>
       </ReturnValue>
     </Procedure>
-    
+
     <Procedure name='ohObjectUpdateCounter'>
       <description>get the object property update counter</description>
       <alias>ObjectHandler::RepositoryXL::instance().updateCounter</alias>
@@ -183,7 +184,7 @@
         <tensorRank>vector</tensorRank>
       </ReturnValue>
     </Procedure>
-    
+
     <Procedure name='ohObjectIsPermanent'>
       <description>get the object property permanent</description>
       <alias>ObjectHandler::RepositoryXL::instance().isPermanent</alias>
@@ -204,8 +205,8 @@
         <tensorRank>vector</tensorRank>
       </ReturnValue>
     </Procedure>
-    
-    <Procedure name='ohObjectClassName'>    
+
+    <Procedure name='ohObjectClassName'>
       <description>get the object class name</description>
       <alias>ObjectHandler::RepositoryXL::instance().className</alias>
       <SupportedPlatforms>

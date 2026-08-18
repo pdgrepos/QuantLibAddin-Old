@@ -1,0 +1,10 @@
+#ifndef pyoh_%(categoryName)s_hpp
+#define pyoh_%(categoryName)s_hpp
+
+#include <Python.h>
+
+namespace %(namespaceObjects)sPy {
+
+%(bufferHpp)s}
+
+#endif

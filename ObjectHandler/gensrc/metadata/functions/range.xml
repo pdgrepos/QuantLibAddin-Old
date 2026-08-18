@@ -18,6 +18,7 @@
       <libraryFunction>Range</libraryFunction>
       <SupportedPlatforms>
         <SupportedPlatform name='Excel'/>
+        <SupportedPlatform name='Python'/>
       </SupportedPlatforms>
       <ParameterList>
         <Parameters>

@@ -19,6 +19,7 @@
       <libraryFunction>Group</libraryFunction>
       <SupportedPlatforms>
         <SupportedPlatform name='Excel'/>
+        <SupportedPlatform name='Python'/>
       </SupportedPlatforms>
       <ParameterList>
         <Parameters>
@@ -35,6 +36,7 @@
       <libraryFunction>Group</libraryFunction>
       <SupportedPlatforms>
         <SupportedPlatform name='Excel'/>
+        <SupportedPlatform name='Python'/>
       </SupportedPlatforms>
       <ParameterList>
         <Parameters>
@@ -52,6 +54,7 @@
       <libraryFunction>list</libraryFunction>
       <SupportedPlatforms>
         <SupportedPlatform name='Excel'/>
+        <SupportedPlatform name='Python'/>
       </SupportedPlatforms>
       <ParameterList>
         <Parameters/>
@@ -67,6 +70,7 @@
       <libraryFunction>size</libraryFunction>
       <SupportedPlatforms>
         <SupportedPlatform name='Excel'/>
+        <SupportedPlatform name='Python'/>
       </SupportedPlatforms>
       <ParameterList>
         <Parameters/>

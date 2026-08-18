@@ -119,6 +119,7 @@
       <alias>ObjectHandler::logAllObjects</alias>
       <SupportedPlatforms>
         <SupportedPlatform name='Excel'/>
+        <SupportedPlatform name='Python'/>
       </SupportedPlatforms>
       <ParameterList>
         <Parameters/>
@@ -134,6 +135,7 @@
       <alias>ObjectHandler::logObject</alias>
       <SupportedPlatforms>
         <SupportedPlatform name='Excel'/>
+        <SupportedPlatform name='Python'/>
         <SupportedPlatform name='Cpp'/>
       </SupportedPlatforms>
       <ParameterList>

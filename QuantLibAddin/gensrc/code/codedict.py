@@ -909,6 +909,114 @@ code103 = '''\
             ObjectHandler::Create<%(type)s>()(%(name)s);\n'''
 
 ##########################################################################
+# code for Python
+##########################################################################
+
+codePy1 = '''\
+        const %(nativeType)s& %(name)s = convertValue<%(nativeType)s>(objects[%(parIndex)s]);'''
+
+codePy1_Opt = '''\
+        const boost::optional<%(nativeType)s>& %(name)s = convertOptionalValue<%(nativeType)s>(objects[%(parIndex)s]);'''
+
+codePy2_Opt = '''\
+        const %(nativeType)s& %(name)s = convertOptionalValue<%(nativeType)s>(objects[%(parIndex)s], %(defaultValue)s);'''
+
+codePy1_1 = '''\
+        const std::string& %(name)s = convertValue<std::string>(objects[%(parIndex)s]);'''
+
+codePy2 = '''\
+        const std::vector<%(nativeType)s>& %(name)s = convertVector<%(nativeType)s>(objects[%(parIndex)s]);'''
+
+codePy2_1 = '''\
+        const std::vector<std::string>& %(name)s = convertVector<std::string>(objects[%(parIndex)s]);'''
+
+codePy2_2 = '''\
+        const std::vector<ObjectHandler::property_t>& %(name)s = convertVector<ObjectHandler::property_t>(objects[%(parIndex)s]);'''
+
+codePy2_3 = '''\
+        const std::vector<%(type)s>& %(name)s = convertVector<%(type)s>(objects[%(parIndex)s]);'''
+
+codePy3 = '''\
+        const std::vector<std::vector<%(nativeType)s> >& %(name)s = convertVector<std::vector<%(nativeType)s> >(objects[%(parIndex)s]);'''
+
+codePy3_1 = '''\
+        const std::vector<std::vector<std::string> >& %(name)s = convertVector<std::vector<std::string> >(objects[%(parIndex)s]);'''
+
+codePy3_2 = '''\
+        const std::vector<std::vector<ObjectHandler::property_t> >& %(name)s = convertVector<std::vector<ObjectHandler::property_t> >(objects[%(parIndex)s]);'''
+
+codePy4 = '''\
+        std::vector<%(type)s> %(nameConverted)s = PdgLibAddin::convertVector<long, Date>(%(name)s);\n
+        std::vector<ObjectHandler::property_t> %(name)sCpp = pdg::convertDatesToProperty(%(name)s);\n'''
+
+codePy5 = '''\
+        %(type)s %(nameConverted)s =
+            LocalEnumRegistry<%(type)s>::instance().parse(%(name)s);\n'''
+
+codePy6 = '''\
+        %(type)s %(nameConverted)s(%(name)s);\n'''
+
+codePy7 = '''\
+        Matrix %(nameConverted)s(credit::convertMatrix(%(name)s));\n'''
+
+codePy37M = '''\
+        std::vector<boost::shared_ptr<%(nameSpace)s::%(classname)s> > %(nameConverted)s =
+            ObjectHandler::getLibraryObjectVector<%(namespaceObjects)s::%(classname)s, %(nameSpace)s::%(classname)s>(%(name)s);\n'''
+
+codePy37NullXL = '''\
+        std::vector<boost::shared_ptr<%(classname)s> > %(nameConverted)s =
+            ObjectHandler::getLibraryObjectVector<%(namespaceObjects)s::%(classname)sAddin, %(classname)s>(%(name)s);\n'''
+
+codePy37ql = '''\
+        std::vector<boost::shared_ptr<QuantLibAddin::%(classname)s> > %(nameConverted)s =
+            ObjectHandler::getObjectVector<QuantLibAddin::%(classname)s>(%(name)s);\n'''
+
+code35cpp = '''\
+        std::vector<%(type)s> %(nameConverted)s =
+            ObjectHandler::vectorStringToEnum<%(type)s>(%(name)s, "%(name)s");\n'''
+
+code24b = '''\
+        %(type)s %(nameConverted)s;
+        QuantLibAddin::cppToLibrary(%(name)s, %(nameConverted)s);\n'''
+
+code39p = '''\
+        OH_GET_REFERENCE_DEFAULT(%(nameConverted)s, %(name)s,
+            %(namespaceObjects)s::%(classname)s, %(namespaceLibrary)s::%(classname)s)\n'''
+
+code38Q = '''\
+        OH_GET_REFERENCE(%(nameConverted)s, %(name)s,
+            QuantLibAddin::%(classname)s, QuantLib::%(classname)s)\n'''
+
+code38M = '''\
+        OH_GET_REFERENCE(%(nameConverted)s, %(name)s,
+            %(namespaceObjects)s::%(classname)s, %(nameSpace)s::%(classname)s)\n'''
+
+code48c = '''\
+        OH_GET_UNDERLYING(%(nameConverted)s, %(name)s,
+            %(namespaceObjects)s::%(classname)s, %(nameSpace)s::%(classname)s)\n'''
+
+code49c = '''\
+        OH_GET_UNDERLYING_NONCONST(%(nameConverted)s, %(name)s,
+            %(namespaceObjects)s::%(classname)s, %(nameSpace)s::%(classname)s)\n'''
+
+code37ecpp = '''\
+        std::vector<std::vector<boost::shared_ptr<%(namespaceLibrary)s::%(classname)s> > > %(nameConverted)s =
+            ObjectHandler::getLibraryObjectMatrix<%(namespaceObjects)s::%(classname)s, %(namespaceLibrary)s::%(classname)s>(%(name)s);\n'''
+
+code37ecppM = '''\
+        std::vector<std::vector<boost::shared_ptr<%(nameSpace)s::%(classname)s> > > %(nameConverted)s =
+            ObjectHandler::getLibraryObjectMatrix<%(namespaceObjects)s::%(classname)s, %(nameSpace)s::%(classname)s>(%(name)s);\n'''
+
+codePy27 = '''\
+        %(type)s %(nameConverted)s = %(name)s;\n'''
+
+codePy27_Opt = '''\
+        %(type)s %(nameConverted)s = %(name)s.has_value() ? %(type)s(*%(name)s) : %(defaultValue)s;\n '''
+
+codePy31 = '''\
+        std::vector<%(type)s> %(nameConverted)s = %(name)s;\n '''
+
+##########################################################################
 # code common to mutiple addins
 ##########################################################################
 

@@ -181,6 +181,7 @@
       <alias>ObjectHandler::split</alias>
       <SupportedPlatforms>
         <SupportedPlatform name='Excel'/>
+        <SupportedPlatform name='Python'/>
       </SupportedPlatforms>
       <ParameterList>
         <Parameters>
@@ -212,6 +213,7 @@
       <alias>ObjectHandler::concatenate</alias>
       <SupportedPlatforms>
         <SupportedPlatform name='Excel'/>
+        <SupportedPlatform name='Python'/>
       </SupportedPlatforms>
       <ParameterList>
         <Parameters>
@@ -320,6 +322,7 @@
       <alias>ObjectHandler::boostVersion</alias>
       <SupportedPlatforms>
         <SupportedPlatform name='Excel'/>
+        <SupportedPlatform name='Python'/>
       </SupportedPlatforms>
       <ParameterList>
         <Parameters/>
@@ -335,6 +338,7 @@
       <alias>ObjectHandler::version</alias>
       <SupportedPlatforms>
         <SupportedPlatform name='Excel'/>
+        <SupportedPlatform name='Python'/>
         <SupportedPlatform name='Cpp'/>
       </SupportedPlatforms>
       <ParameterList>

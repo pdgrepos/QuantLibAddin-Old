@@ -14,12 +14,17 @@ from gensrc.utilities import outputfile
 from gensrc.utilities import log
 from gensrc.utilities import common
 
+LOOP_INCLUDES = '''\
+#include <%s/loop/loop_%s.hpp>
+#include <ohxl/loop.hpp>\n'''
+
 class PythonAddin(addin.Addin):
     """Generate source code for Python addin."""
 
     #############################################
     # class variables
     #############################################
+    moduleName_ = ''
     prefix_ = ''
 
     #############################################
@@ -40,7 +45,7 @@ class PythonAddin(addin.Addin):
     def generateFunctions(self):
         """Generate source code for all functions in all categories."""
         for cat in self.categoryList_.categories(self.name_, self.coreCategories_, self.addinCategories_):
-            categoryIncludes = cat.includeList()
+            categoryIncludes = cat.includeList(LOOP_INCLUDES)
             bufferCpp = ''
             bufferHpp = ''
             for func in cat.functions(self.name_): 
@@ -55,9 +60,9 @@ class PythonAddin(addin.Addin):
                 'categoryName' : cat.name(),
                 'namespaceObjects' : environment.config().namespaceObjects(),
                 'bufferHpp' : bufferHpp })
-            fileNameCpp = '%spydg_%s.cpp' % ( self.rootPath_, cat.name())
+            fileNameCpp = '%s%s_%s.cpp' % ( self.rootPath_, self.prefix_, cat.name())
             outputfile.OutputFile(self, fileNameCpp, self.copyright_, self.bufferBody_)
-            fileNameHpp = '%spydg_%s.hpp' % ( self.rootPath_, cat.name())
+            fileNameHpp = '%s%s_%s.hpp' % ( self.rootPath_, self.prefix_, cat.name())
             outputfile.OutputFile(self, fileNameHpp, self.copyright_, self.bufferHeader_)
         
               
@@ -66,14 +71,14 @@ class PythonAddin(addin.Addin):
         defSymbols = ''
         includeFiles = ''
         for cat in self.categoryList_.categories(self.name_, self.coreCategories_, self.addinCategories_):
-            includeFiles += '\n#include \"pydg_' + cat.name() + '.hpp\"'
+            includeFiles += '\n#include \"'+self.prefix_+'_' + cat.name() + '.hpp\"'
             for func in cat.functions(self.name_):
-                defSymbols += '\n\t{ "'+ func.name() + '", (PyCFunction)PdgLibAddinPy::'+ func.name() + ', METH_VARARGS, "Arguments(' + self.generateArgsDescription(func, self.argsDescription_)+ ')"},' 
+                defSymbols += '\n\t{ "'+ func.name() + '", (PyCFunction)'+environment.config().namespaceObjects()+'Py::'+ func.name() + ', METH_VARARGS, "Arguments(' + self.generateArgsDescription(func, self.argsDescription_)+ ')"},' 
         
         self.defStub_.set({'includeFiles' : includeFiles,
                            'defSymbols' : defSymbols,
-                           'prefix' : self.prefix_})
-        fileName = self.rootPath_ + '/pydg_defines.hpp'
+                           'prefix' : self.moduleName_})
+        fileName = self.rootPath_ + '/'+self.prefix_+'_defines.hpp'
         outputfile.OutputFile(self, fileName, None, self.defStub_)
         
     def generateArgsDescription(self, func, ruleGroup):
@@ -104,6 +109,10 @@ class PythonAddin(addin.Addin):
         return self.bufferDeclaration_.set({
             'functionName' : func.name() })
 
+    def loopName(self, param):
+        """Return the variable name for a loop parameter."""
+        return param.name() + 'Lib'
+
     #############################################
     # serializer interface
     #############################################
@@ -111,5 +120,6 @@ class PythonAddin(addin.Addin):
     def serialize(self, serializer):
         """Load/unload class state to/from serializer object."""
         super(PythonAddin, self).serialize(serializer)
+        serializer.serializeProperty(self, 'moduleName')
         serializer.serializeProperty(self, 'prefix')
 

@@ -1,0 +1,8 @@
+
+        // loop on the input parameter and populate the return vector	
+		auto functionBind =
+            boost::bind(%(functionSignature)s
+                &%(functionCodeName)s,%(inputList)s
+            );
+        auto returnValue = loop<decltype(functionBind), %(inputType)s, %(returnType)s>(functionBind, %(inputParam)s);
+
