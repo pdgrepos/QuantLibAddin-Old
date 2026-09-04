@@ -31,9 +31,10 @@
 
     <Procedure name='ohRepositoryListObjectIDs'>
       <description>list the IDs of objects in repository matching regex.</description>
-      <alias>ObjectHandler::RepositoryXL::instance().listObjectIDs</alias>
+      <alias>ObjectHandler::Repository::instance().listObjectIDs</alias>
       <SupportedPlatforms>
         <SupportedPlatform name='Excel'/>
+        <SupportedPlatform name='Python'/>
       </SupportedPlatforms>
       <ParameterList>
         <Parameters>
@@ -42,6 +43,23 @@
             <tensorRank>scalar</tensorRank>
             <description>optional matching pattern in UNIX format (wildcard is .*).</description>
           </Parameter>
+        </Parameters>
+      </ParameterList>
+      <ReturnValue>
+        <type>string</type>
+        <tensorRank>vector</tensorRank>
+      </ReturnValue>
+    </Procedure>
+
+    <Procedure name='ohRepositoryOrderedListObjectIDs'>
+      <description>ordered sequence of object identifiers based on their dependency relationships</description>
+      <alias>ObjectHandler::Repository::instance().orderedListObjectIDs</alias>
+      <SupportedPlatforms>
+        <SupportedPlatform name='Excel'/>
+        <SupportedPlatform name='Python'/>
+      </SupportedPlatforms>
+      <ParameterList>
+        <Parameters>
         </Parameters>
       </ParameterList>
       <ReturnValue>

@@ -45,20 +45,24 @@
 
 namespace ObjectHandler {
 
-    boost::shared_ptr<Object> createRange(const boost::shared_ptr<ValueObject> &valueObject) 
+    void registerCreatorImpl(CreatorMap &map, const std::string &className, const Creator &creator) {
+        map[className] = creator;
+    }
+
+    boost::shared_ptr<Object> createRange(const boost::shared_ptr<ValueObject> &valueObject)
 	{
         // FIXME - Implement ValueObject::permanent() and call that instead?
-        bool permanent = 
+        bool permanent =
             boost::get<bool>(valueObject->getProperty("PERMANENT"));
 
-        std::vector<std::vector<double> > values = 
+        std::vector<std::vector<double> > values =
             ObjectHandler::matrix::convert2<double>(valueObject->getProperty("VALUES"), "VALUES");
 
         boost::shared_ptr<Object> object(new Range(valueObject, values, permanent));
         return object;
     }
 
-    boost::shared_ptr<Object> createGroup(const boost::shared_ptr<ValueObject> &valueObject) 
+    boost::shared_ptr<Object> createGroup(const boost::shared_ptr<ValueObject> &valueObject)
 	{
         return boost::shared_ptr<Object>(
 			new Group(
@@ -88,16 +92,16 @@ namespace ObjectHandler {
         return *instance_;
     }
 
-    SerializationFactory::CreatorMap &SerializationFactory::creatorMap_() const {
+    CreatorMap &SerializationFactory::creatorMap_() const {
         static CreatorMap creatorMap;
         return creatorMap;
     }
 
     void SerializationFactory::registerCreator(const std::string &className, const Creator &creator) {
-        creatorMap_()[className] = creator;
+        registerCreatorImpl(creatorMap_(), className, creator);
     }
 
-    boost::shared_ptr<Object> SerializationFactory::recreateObject( 
+    boost::shared_ptr<Object> SerializationFactory::recreateObject(
         boost::shared_ptr<ObjectHandler::ValueObject> valueObject) const {
 
         CreatorMap::const_iterator i = creatorMap_().find(valueObject->className());
@@ -166,7 +170,7 @@ namespace ObjectHandler {
 		const std::vector<std::string>& handlesList,
 		const std::string &path,
 		bool forceOverwrite,
-		bool includeGroups) 
+		bool includeGroups)
 	{
         std::vector<boost::shared_ptr<ObjectHandler::Object> > ObjectListObjPtr =
             ObjectHandler::getObjectVector<ObjectHandler::Object>(handlesList, 0, includeGroups);

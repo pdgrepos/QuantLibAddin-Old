@@ -41,6 +41,13 @@ namespace ObjectHandler {
     typedef std::set<std::string> Category;
     typedef std::list<StrObjectPair> HandlesList;
 
+    //! Define the type for a factory creator function.
+    typedef boost::shared_ptr<Object>(*Creator)(const boost::shared_ptr<ValueObject>&);
+    // A map of Creators for each supported class.
+    typedef std::map<std::string, Creator> CreatorMap;
+
+    DLL_API void registerCreatorImpl(CreatorMap &map, const std::string &className, const Creator &creator);
+
     //! A Singleton wrapping the boost::serialization interface
     /*! The pure virtual functions in this class must be implemented as appropriate
         for client applications.
@@ -110,7 +117,7 @@ namespace ObjectHandler {
         //! \name Object Creation
         //@{
         //! Recreate an Object from its ValueObject
-        boost::shared_ptr<Object> recreateObject( 
+        boost::shared_ptr<Object> recreateObject(
             boost::shared_ptr<ObjectHandler::ValueObject> valueObject) const ;
         //! Recreate an Object from its ValueObject and store it in the Repository
         /*! This function calls recreateObject to recreate the Object from its
@@ -138,12 +145,9 @@ namespace ObjectHandler {
 
         //! A pointer to the SerializationFactory instance, used to support the Singleton pattern.
         static SerializationFactory *instance_;
-        //! Define the type for a factory creator function.
-        typedef boost::shared_ptr<Object> (*Creator)(const boost::shared_ptr<ValueObject>&);
+
         //! Register a Creator with the Factory.
         void registerCreator(const std::string &className, const Creator &creator);
-        // A map of Creators for each supported class.
-        typedef std::map<std::string, Creator> CreatorMap;
         // Cannot export std::map across DLL boundaries, so instead of a data member
         // use a private member function that wraps a reference to a static variable.
         CreatorMap &creatorMap_() const;

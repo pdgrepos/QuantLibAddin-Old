@@ -85,7 +85,6 @@
         <Rule tensorRank='scalar' superType='libraryClass' codeID='code38'/>
         <Rule tensorRank='scalar' superType='libraryClassQL' codeID='code38Q'/>
         <Rule tensorRank='scalar' superType='libraryClassM' codeID='code38M'/>
-        <Rule tensorRank='scalar' superType='libToHandleQL' type='credit::Quote' codeID='code214'/>
         <Rule tensorRank='scalar' superType='libToHandle' default='true' codeID='code44b'/>
         <Rule tensorRank='scalar' superType='libToHandle' default='false' codeID='code44b'/>
         <Rule tensorRank='scalar' superType='underlyingClass' codeID='code48'/>
@@ -95,11 +94,9 @@
         <Rule tensorRank='vector' superType='libraryClass' codeID='code37c'/>
         <Rule tensorRank='vector' superType='libraryClassM' codeID='codePy37M'/>
         <Rule tensorRank='vector' superType='libraryClassNull' codeID='codePy37NullXL'/>
-        <Rule tensorRank='vector' superType='libToHandleQL' type='credit::Quote' codeID='code43'/>
         <Rule tensorRank='vector' superType='libToHandleQL' codeID='code42'/>
         <Rule tensorRank='matrix' superType='libraryClass' codeID='code37ecpp'/>
         <Rule tensorRank='matrix' superType='libraryClassM' codeID='code37ecppM'/>
-        <Rule tensorRank='matrix' superType='libToHandleQL' type='credit::Quote' codeID='code50'/>
       </Rules>
     </RuleGroup>
 
@@ -112,7 +109,6 @@
         <Rule tensorRank='scalar' nativeType='void'>static bool returnValue = true;&#10;        </Rule>
         <Rule tensorRank='scalar' nativeType='any'>ObjectHandler::property_t returnValue = </Rule>
         <Rule tensorRank='scalar'>%(type)s returnValue = </Rule>
-        <Rule tensorRank='vector' superType='libraryType' type='credit::Array'>%(type)s returnValue = </Rule>
         <Rule tensorRank='vector' superType='libraryType'>std::vector&lt;%(type)s&gt; returnValue = </Rule>
         <Rule tensorRank='vector' nativeType='string'>std::vector&lt;std::string&gt; returnValue = </Rule>
         <Rule tensorRank='vector' nativeType='any'>std::vector&lt;ObjectHandler::property_t&gt; returnValue = </Rule>
@@ -147,8 +143,8 @@
     <RuleGroup name='voCall' checkParameterIgnore='true' checkSkipFirst='true' indent='4' delimiter=',&#10;'>
       <Wrap>&#10;%s</Wrap>
       <Rules>
+        <Rule tensorRank='scalar' superType='libraryType' type='QuantLib::Date' default='true'>%(indent)s%(name)s.has_value() ? ObjectHandler::property_t(*%(name)s) : ObjectHandler::property_t()</Rule>
         <Rule tensorRank='vector' superType='libraryType' type='Date'>%(indent)s%(name)sCpp</Rule>
-        <Rule tensorRank='scalar' superType='libraryType' type='QuantLib::Date' default='true'>%(indent)s*%(name)s</Rule>
         <Rule>%(indent)s%(name)s</Rule>
       </Rules>
     </RuleGroup>

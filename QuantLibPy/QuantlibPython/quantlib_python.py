@@ -69,6 +69,9 @@ def testFunction():
     print(f"ScheduleEndDate = {d}")
     e = py_quantlib.qlCalendarAdjust("TARGET",[d],"Following")
     print(f"Adjusted scheduleEndDate = {e}")
+    f = py_oh.ohRepositoryListObjectIDs("")
+    print(f)
+    py_oh.ohObjectSave(f, "prova.xml", True, None)
 
 def main():
     """main function"""

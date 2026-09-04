@@ -5,6 +5,7 @@
   <xlFunctionWizardCategory>ObjectHandler</xlFunctionWizardCategory>
   <addinIncludes>
     <include>oh/serializationfactory.hpp</include>
+    <include>oh/conversions/getobjectvector.hpp</include>
   </addinIncludes>
 
   <copyright>
@@ -21,6 +22,7 @@
         <SupportedPlatform name='Excel' calcInWizard='false'/>
         <SupportedPlatform name='Cpp' />
         <SupportedPlatform name='Calc' />
+        <SupportedPlatform name='Python' />
       </SupportedPlatforms>
       <ParameterList>
         <Parameters>
@@ -35,7 +37,7 @@
             <tensorRank>scalar</tensorRank>
             <description>file name to which objects are to be serialized.</description>
           </Parameter>
-          <Parameter name='Overwrite' default='false'>
+          <Parameter name='OverWrite' default='false'>
             <type>bool</type>
             <tensorRank>scalar</tensorRank>
             <description>overwrite the output file if it exists.</description>
@@ -60,6 +62,7 @@
         <SupportedPlatform name='Excel' calcInWizard='false'/>
         <SupportedPlatform name='Cpp'/>
         <SupportedPlatform name='Calc'/>
+        <SupportedPlatform name='Python' />
       </SupportedPlatforms>
       <ParameterList>
         <Parameters>
@@ -78,7 +81,7 @@
             <tensorRank>scalar</tensorRank>
             <description>Recurse subdirectories of Directory when searching for filenames matching Pattern.</description>
           </Parameter>
-          <Parameter name='Overwrite' default='false'>
+          <Parameter name='OverWrite' default='false'>
             <type>bool</type>
             <tensorRank>scalar</tensorRank>
             <description>Overwrite any existing Object that has the same ID as one being loaded.</description>
@@ -97,6 +100,7 @@
       <SupportedPlatforms>
         <SupportedPlatform name='Excel' calcInWizard='false'/>
         <SupportedPlatform name='Cpp' />
+        <SupportedPlatform name='Python' />
       </SupportedPlatforms>
       <ParameterList>
         <Parameters>
@@ -105,7 +109,7 @@
             <tensorRank>vector</tensorRank>
             <description>list of IDs of objects to be serialized.</description>
           </Parameter>
-          <Parameter name='Overwrite' default='false'>
+          <Parameter name='OverWrite' default='false'>
             <type>bool</type>
             <tensorRank>scalar</tensorRank>
             <description>overwrite the output file if it exists.</description>
@@ -124,6 +128,7 @@
       <SupportedPlatforms>
         <SupportedPlatform name='Excel' calcInWizard='false'/>
         <SupportedPlatform name='Cpp'/>
+        <SupportedPlatform name='Python' />
       </SupportedPlatforms>
       <ParameterList>
         <Parameters>
@@ -132,7 +137,7 @@
             <tensorRank>scalar</tensorRank>
             <description>XML string from which objects are to be deserialized.</description>
           </Parameter>
-          <Parameter name='Overwrite' default='false'>
+          <Parameter name='OverWrite' default='false'>
             <type>bool</type>
             <tensorRank>scalar</tensorRank>
             <description>Overwrite any existing Object that has the same ID as one being loaded.</description>

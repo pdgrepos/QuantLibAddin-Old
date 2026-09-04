@@ -185,6 +185,7 @@
     <ClCompile Include="pyoh_objects.cpp" />
     <ClCompile Include="pyoh_ohutils.cpp" />
     <ClCompile Include="pyoh_range.cpp" />
+    <ClCompile Include="pyoh_serialization.cpp" />
     <ClCompile Include="py_enumregistry.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -214,6 +215,7 @@
     <ClInclude Include="pyoh_objects.hpp" />
     <ClInclude Include="pyoh_ohutils.hpp" />
     <ClInclude Include="pyoh_range.hpp" />
+    <ClInclude Include="pyoh_serialization.hpp" />
     <ClInclude Include="py_enumregistry.hpp" />
     <ClInclude Include="py_enum_registry.hpp" />
     <ClInclude Include="py_oh_utilities.hpp" />

@@ -25,6 +25,7 @@
     <ClCompile Include="pyoh_objects.cpp" />
     <ClCompile Include="pyoh_ohutils.cpp" />
     <ClCompile Include="pyoh_range.cpp" />
+    <ClCompile Include="pyoh_serialization.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="oh">
@@ -99,5 +100,6 @@
     <ClInclude Include="pyoh_ohutils.hpp" />
     <ClInclude Include="pyoh_range.hpp" />
     <ClInclude Include="py_utilities.hpp" />
+    <ClInclude Include="pyoh_serialization.hpp" />
   </ItemGroup>
 </Project>

@@ -1,6 +1,12 @@
 #include "ohpy/py_shared_state.hpp"
 #include "pyql_defines.hpp" //py_quantlib_methods definition
 #include "py_local_enumerations.hpp"
+#include <qlo/Serialization/serializationfactory.hpp>
+
+// Instantiate the Processor Factory
+static ObjectHandler::ProcessorFactory processorFactory;
+// Instantiate the Serialization Factory
+static QuantLibAddin::SerializationFactory factory;
 
 extern "C" {
 

@@ -1,5 +1,6 @@
 #include <Python.h>
 #include "py_shared_state.hpp"
+#include "pyoh_defines.hpp"
 
 static ObjectHandler::Repository repo;
 
@@ -10,7 +11,8 @@ extern "C" {
         "py_oh", // Deve coincidere con il nome del modulo Python
         "Modulo Core per la gestione delle risorse condivise OH",
         -1,
-        NULL, NULL, NULL, NULL, NULL
+        py_oh_methods,
+        NULL, NULL, NULL, NULL
     };
 
     PyMODINIT_FUNC PyInit_py_oh(void) {

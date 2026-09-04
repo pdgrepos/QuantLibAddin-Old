@@ -1,10 +1,16 @@
 #include <%(libRootDirectory)s/serialization/serializationfactory.hpp>
 #include <%(libRootDirectory)s/serialization/create/create_all.hpp>
 
+using namespace ObjectHandler;
+
 namespace %(namespaceObjects)s {
 
-    void SerializationFactory::registerCreators() {
+    void registerCreatorsImpl(CreatorMap &map) {
 %(bufferCreators)s
+    }
+	
+	void SerializationFactory::registerCreators() {
+        registerCreatorsImpl(creatorMap_());
     }
 
 }

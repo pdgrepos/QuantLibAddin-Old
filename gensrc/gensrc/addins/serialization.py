@@ -38,7 +38,7 @@ class Serialization(addin.Addin):
     boost::shared_ptr<ObjectHandler::Object> create_%(functionName)s(
         const boost::shared_ptr<ObjectHandler::ValueObject>&);\n\n'''
     REGISTER_CREATOR = '''\
-        registerCreator("%(functionName)s", create_%(functionName)s);\n'''
+        registerCreatorImpl(map, "%(functionName)s", create_%(functionName)s);\n'''
     REGISTER_TYPE = '''\
         // %(categoryDisplayName)s\n
         register_%(categoryName)s(ar);\n\n'''

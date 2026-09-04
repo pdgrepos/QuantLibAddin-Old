@@ -30,6 +30,7 @@
 #include <boost/regex.hpp>
 #include <ostream>
 #include <sstream>
+#include <unordered_set>
 
 using boost::shared_ptr;
 using std::set;
@@ -148,7 +149,7 @@ namespace ObjectHandler {
                 if (i->second->object()->permanent())
                     ++i;
                 else
-                    objectMap_.erase(i++);                    
+                    objectMap_.erase(i++);
             }
         }
     }
@@ -177,6 +178,32 @@ namespace ObjectHandler {
 
     int Repository::objectCount() {
         return objectMap_.size();
+    }
+
+    void collectWithPrecedents(const std::string& id,
+        Repository& repo,
+        std::unordered_set<std::string>& visited,
+        std::vector<std::string>& ordered)
+    {
+        if (visited.count(id)) return;
+        visited.insert(id);
+
+        for (const auto& prec : repo.precedentIDs(id)) {
+            collectWithPrecedents(prec, repo, visited, ordered);
+        }
+        ordered.push_back(id);
+    }
+
+    std::vector<std::string> Repository::orderedListObjectIDs() {
+
+        std::vector<std::string> objectIDs;
+        std::unordered_set<std::string> visited;
+        const std::vector<std::string> all = listObjectIDs();
+
+        for (const auto& id : all) {
+            collectWithPrecedents(id, *this, visited, objectIDs);
+        }
+        return objectIDs;
     }
 
     const std::vector<string> Repository::listObjectIDs(const string &regex) {

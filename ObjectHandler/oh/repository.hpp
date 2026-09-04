@@ -110,7 +110,7 @@ namespace ObjectHandler {
             the Repository class for platform-specific functionality.
         */
         virtual boost::shared_ptr<Object> retrieveObjectImpl(const std::string &objectID);
-        
+
         //! Delete the object with the given ID.
         /*! Delete the object regardless of whether or not it is permanent.
             Take no action if no object exists with that ID.
@@ -153,6 +153,9 @@ namespace ObjectHandler {
         virtual const std::vector<std::string> listObjectIDs(
             const std::string &regex = "");
 
+        // This method aims to produce an ordered sequence of object identifiers based on their dependency relationships.
+        std::vector<std::string> orderedListObjectIDs();
+
         //! Indicate whether an Object with the given ID is found in the Repository.
         virtual std::vector<bool> objectExists(const std::vector<std::string> &objectList);
         //@}
@@ -193,7 +196,7 @@ namespace ObjectHandler {
             precedent ObjectWrappers, which in this case act as Observables.
             If any of the precedents changes, then the Observer is notified.
         */
-        virtual void registerObserver( 
+        virtual void registerObserver(
             boost::shared_ptr<ObjectWrapper> objWrapper);
 
         //! Convert Excel-format Object IDs into the format recognized by the base Repository class

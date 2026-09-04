@@ -25,6 +25,8 @@
 
 namespace QuantLibAddin {
 
+    void registerCreatorsImpl(ObjectHandler::CreatorMap &map);
+
     class SerializationFactory : public ObjectHandler::SerializationFactory {
 
     public:
