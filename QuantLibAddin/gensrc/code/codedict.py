@@ -169,7 +169,7 @@ code44b = '''\
                     %(name)sCoerce);\n'''
 
 code45a = '''\
-        QuantLib::Handle<QuantLib::Quote> %(nameConverted)s = 
+        QuantLib::Handle<QuantLib::Quote> %(nameConverted)s =
             ObjectHandler::convert2<QuantLib::Handle<QuantLib::Quote> >(
                 ObjectHandler::ConvertOper(*%(name)s), "%(name)s");\n'''
 
@@ -246,12 +246,12 @@ code56a = '''\
         static char ret[XL_MAX_STR_LEN];
         ObjectHandler::stringToChar(str, ret);
         return ret;'''
- 
+
 code56b = '''\
         static %(nativeType)s returnValueXL;
         returnValueXL = %(namespaceObjects)s::libraryToScalar(returnValue);
         return &returnValueXL;'''
- 
+
 code56c = '''\
         static long returnValueXL;
         returnValueXL = static_cast<long>(%(namespaceObjects)s::libraryToScalar(returnValue));
@@ -338,7 +338,7 @@ code203 = '''\
             QuantLibXL::operToQlArray(%(name)s, "%(name)s");*/\n'''
 
 code204 = '''\
-        std::vector<%(type)s> %(nameConverted)s = 
+        std::vector<%(type)s> %(nameConverted)s =
             ObjectHandler::vector::convert2<%(type)s>(%(name)s, "%(name)s");\n'''
 
 code205 = '''\
@@ -389,7 +389,7 @@ code213 = '''\
             %(name)s, "%(name)s", %(defaultValue)s);\n'''
 
 code214 = '''\
-        QuantLib::Handle<QuantLib::Quote> %(nameConverted)s = 
+        QuantLib::Handle<QuantLib::Quote> %(nameConverted)s =
             ObjectHandler::convert2<QuantLib::Handle<QuantLib::Quote> >(
                 %(name)s, "%(name)s");\n'''
 
@@ -418,7 +418,7 @@ code71b = '''\
 
 code71bdef = '''\
         std::string %(name)sCpp;
-        if(%(name)s.hasValue()) 
+        if(%(name)s.hasValue())
             calcToScalar(%(name)sCpp, %(name)s);
         else
             %(name)sCpp = %(defaultValue)s;\n'''
@@ -429,7 +429,7 @@ code71c = '''\
 
 code71cdef = '''\
         ObjectHandler::property_t %(name)sCpp;
-        if(%(name)s.hasValue()) 
+        if(%(name)s.hasValue())
             calcToScalar(%(name)sCpp, %(name)s);
         else
             %(name)sCpp = %(defaultValue)s;\n'''
@@ -440,7 +440,7 @@ code72 = '''\
 
 code72def = '''\
         %(nativeType)s %(name)sCpp;
-        if(%(name)s.hasValue()) 
+        if(%(name)s.hasValue())
             calcToScalar(%(name)sCpp, %(name)s);
         else
             %(name)sCpp = %(defaultValue)s;\n'''
@@ -545,16 +545,16 @@ code86any = '''\
         retAnyArray.realloc(1);
         SEQ(ANY) retAnyVector(1);
         retAnyVector[0] = returnValueCalc;
-        retAnyArray[0] = retAnyVector;        
+        retAnyArray[0] = retAnyVector;
         return retAnyArray;\n'''
 
 code86anyvoid = '''\
         SEQSEQ(ANY) retAnyArray;
         retAnyArray.realloc(1);
         SEQ(ANY) retAnyVector(1);
-        STRING s = STRFROMASCII( std::string("VOID").c_str() );    
+        STRING s = STRFROMASCII( std::string("VOID").c_str() );
         retAnyVector[0] = CSS::uno::makeAny( s );
-        retAnyArray[0] = retAnyVector;        
+        retAnyArray[0] = retAnyVector;
         return retAnyArray;\n'''
 
 code87 = '''\
@@ -626,14 +626,14 @@ code96 = '''\
 
 code96defdate = '''\
         %(type)s %(nameConverted)s;
-        if(!%(name)s.hasValue() and typeid(%(defaultValue)s)==typeid(QuantLib::Date())) 
+        if(!%(name)s.hasValue() and typeid(%(defaultValue)s)==typeid(QuantLib::Date()))
             %(nameConverted)s = %(defaultValue)s;
         else
             calcToScalar(%(nameConverted)s, %(name)s);\n'''
 
 code96defperiod = '''\
         %(type)s %(nameConverted)s;
-        if(!%(name)s.hasValue() and typeid(%(defaultValue)s)==typeid("string")) 
+        if(!%(name)s.hasValue() and typeid(%(defaultValue)s)==typeid("string"))
             calcToScalar(%(nameConverted)s, %(defaultValue)s);
         else
             calcToScalar(%(nameConverted)s, %(name)s);\n'''
@@ -830,11 +830,11 @@ code131 = '''\
             ObjectHandler::vector::convert2<%(type)s>(%(name)s, "%(name)s");\n'''
 
 code132 = '''\
-        std::vector<%(type)s> %(nameConverted)s = 
+        std::vector<%(type)s> %(nameConverted)s =
             QuantLibAddin::convertVector<%(nativeType)s, %(type)s>(%(name)s);\n'''
 
 code133 = '''\
-        std::vector<%(type)s> %(nameConverted)s = 
+        std::vector<%(type)s> %(nameConverted)s =
             QuantLibAddin::convertVector<%(nativeType)s, %(type)s>(%(name)sCpp);\n'''
 
 code135 = '''\
@@ -842,7 +842,7 @@ code135 = '''\
             QuantLibAddin::vvToQlMatrix(%(name)s);\n'''
 
 code140 = '''\
-        QuantLib::Handle<QuantLib::Quote> %(nameConverted)s = 
+        QuantLib::Handle<QuantLib::Quote> %(nameConverted)s =
             ObjectHandler::convert2<QuantLib::Handle<QuantLib::Quote> >(
                 %(name)s, "%(name)s");\n'''
 
@@ -952,6 +952,10 @@ codePy4 = '''\
 codePy5 = '''\
         %(type)s %(nameConverted)s =
             LocalEnumRegistry<%(type)s>::instance().parse(%(name)s);\n'''
+
+codePy5v = '''\
+        std::vector<%(type)s> %(nameConverted)s =
+            LocalEnumRegistry<%(type)s>::instance().vectorStringToEnum<%(type)s>(%(name)s, "%(name)s");\n'''
 
 codePy6 = '''\
         %(type)s %(nameConverted)s(%(name)s);\n'''

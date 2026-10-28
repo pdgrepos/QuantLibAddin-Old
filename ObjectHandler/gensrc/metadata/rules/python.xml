@@ -41,7 +41,7 @@
       <Rules>
         <Rule tensorRank='scalar' superType='enumeration' default='true' codeID='codePy5'/>
         <Rule tensorRank='scalar' superType='enumeration' default='false' codeID='codePy5'/>
-        <Rule tensorRank='vector' superType='enumeration' codeID='code35cpp'/>
+        <Rule tensorRank='vector' superType='enumeration' codeID='codePy5v'/>
       </Rules>
     </RuleGroup>
 

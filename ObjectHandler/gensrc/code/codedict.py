@@ -272,6 +272,10 @@ codePy5 = '''\
         %(type)s %(nameConverted)s =
             LocalEnumRegistry<%(type)s>::instance().parse(%(name)s);\n'''
 
+codePy5v = '''\
+        std::vector<%(type)s> %(nameConverted)s =
+            LocalEnumRegistry<%(type)s>::instance().vectorStringToEnum<%(type)s>(%(name)s, "%(name)s");\n'''
+
 codePy6 = '''\
         %(type)s %(nameConverted)s(%(name)s);\n'''
 

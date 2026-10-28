@@ -49,6 +49,24 @@ public:
         return parse(key);
     }
 
+    //! Convert a list of strings into the associated enumerations.
+    template <class T>
+    std::vector<T> vectorStringToEnum(
+        const std::vector<std::string> ids,
+        const std::string &paramName) {
+
+        try {
+            std::vector<T> returnValue;
+            for (std::vector<std::string>::const_iterator i = ids.begin(); i != ids.end(); ++i)
+                returnValue.push_back(parse(*i));
+            return returnValue;
+        }
+        catch (const std::exception &e) {
+            OH_FAIL("vectorStringToEnum: error converting parameter '" << paramName
+                << "' to type '" << typeid(T).name() << "' : " << e.what());
+        }
+    }
+
 private:
     LocalEnumRegistry() = default;
 

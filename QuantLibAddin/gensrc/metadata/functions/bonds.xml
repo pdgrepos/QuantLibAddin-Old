@@ -802,6 +802,7 @@
         <!--SupportedPlatform name='Excel' calcInWizard='false'/-->
         <SupportedPlatform name='Excel'/>
         <SupportedPlatform name='Calc'/>
+        <SupportedPlatform name='Python'/>
         <!--SupportedPlatform name='Cpp'/-->
       </SupportedPlatforms>
       <ParameterList>
@@ -1217,7 +1218,7 @@
             <tensorRank>scalar</tensorRank>
             <description>frequency (e.g. Annual, Semiannual, Every4Month, Quarterly, Bimonthly, Monthly).</description>
           </Parameter>
-          
+
           <Parameter name='SettlementDate' const='False' default='QuantLib::Date()'>
             <type>QuantLib::Date</type>
             <tensorRank>scalar</tensorRank>
@@ -1248,7 +1249,7 @@
     </Procedure>
 
     <!-- QuantLib::Bond Calculation -->
-    
+
     <Member name='qlBondCleanPrice' type='QuantLib::Bond'>
       <description>Returns the clean price for the given bond.</description>
       <libraryFunction>cleanPrice</libraryFunction>
@@ -1417,6 +1418,7 @@
         <SupportedPlatform name='Excel'/>
         <SupportedPlatform name='Cpp'/>
         <SupportedPlatform name='Calc'/>
+        <SupportedPlatform name='Python'/>
       </SupportedPlatforms>
       <ParameterList>
         <Parameters>
@@ -1487,6 +1489,7 @@
         <SupportedPlatform name='Excel'/>
         <SupportedPlatform name='Calc'/>
         <SupportedPlatform name='Cpp'/>
+        <SupportedPlatform name='Python'/>
       </SupportedPlatforms>
       <ParameterList>
         <Parameters>
